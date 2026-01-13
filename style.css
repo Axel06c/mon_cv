@@ -7,18 +7,19 @@
 
 
   color-scheme: light dark; /* light: mode clair, dark: mode sombre */
-  --bg-dark: light-dark(hsl(var(--h), var(--s), 90%),hsl(var(--h), var(--s), 0%));
+  --bg-dark: light-dark(hsl(var(--h), var(--s), 85%),hsl(var(--h), var(--s), 0%));
   --text: light-dark(hsl(var(--h), var(--s), 5%), hsl(var(--h), var(--s), 95%));
-  --bg: light-dark(hsl(var(--h), var(--s), 95%), hsl(var(--h), var(--s), 13%));
+  --bg: light-dark(hsl(var(--h), var(--s), 93%), hsl(var(--h), var(--s), 13%));
   --text-muted: light-dark(hsl(var(--h), var(--s), 30%), hsl(var(--h), var(--s), 70%));
   --bg-light: light-dark(hsl(var(--h), var(--s), 100%), hsl(var(--h), var(--s), 20%));
 
   --border: light-dark(hsl(var(--h), var(--s), 70%), hsl(var(--h), var(--s), 30%));
-  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
-  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --gradient: linear-gradient(135deg, var(--bg-dark), var(--bg));
+  --gradient-hover: linear-gradient(0deg, var(--bg-dark), var(--bg));
   --highlight: light-dark(hsl(var(--h), var(--s), 100%), hsl(var(--h), var(--s), 60%));
-  --border-card: solid 1px var(--bg);
+  --border-card: solid 2px var(--bg);
 
+  --shadow-xl: 0 25px 50px -12px light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.15));
   --shadow: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
   hsla(0, 0%, 100%, 0.07)), 0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 100%, 0.15));
   --shadow-bottom: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
@@ -89,9 +90,9 @@
   /* Style du conteneur CV pour l'impression */
   #cv-container {
     width: 100% !important; 
-        height: 100% !important;
-        max-width: 100% !important;
-        min-height: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    min-height: 100% !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -107,6 +108,10 @@
   }
 
   
+}
+
+* {
+  font-weight: 200;
 }
 
 
@@ -128,19 +133,49 @@ body {
 
 h1 {
   /* Entre 1.5rem (mobile) et 2.5rem (desktop) */
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: x-large;
+  font-weight: 400;
+  margin: 0;
+}
+h2 {
+  font-size: clamp(1.1rem, 3vw, 1.2rem);
+  font-weight: 300;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
 }
 
 p, li {
   /* Entre 0.9rem et 1.1rem */
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-/* Le conteneur A4 */
+.svg {
+  height: auto;
+  width: auto; 
+  filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
+  hsla(0, 0%, 100%, 0.15)))
+}
+.svg_container_round {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  background-color: var(--bg); 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  box-shadow: var(--shadow);
+}
+
+/* Conteneur A4 */
 #cv-container {
-/* clamp(MIN, VALEUR IDÉALE, MAX) */
-  /* Min: 100% (mobile), Idéal: 90vw, Max: 21cm (A4) */
-  width: clamp(320px, 95vw, 21cm);
+  /* clamp(MIN, VALEUR IDÉALE, MAX) */
+  /* Min: 320px, Idéal: 95vw, Max: 21cm (A4) */
+  width: clamp(384px, 95vw, 21cm);
   
   /* Pour la hauteur, on veut garder le ratio A4 le plus possible */
   /* Mais sur mobile, on laisse le contenu définir la hauteur */
@@ -155,6 +190,7 @@ p, li {
 
 .cv-layout {
   flex: 1;
+  background-color: var(--bg-light);
 }
 
 #footer {
@@ -172,17 +208,20 @@ p, li {
   box-shadow: var(--shadow-bottom);
   height: fit-content;
   padding: 10px;
+  background-color:linear-gradient(135deg, var(--bg-dark), var(--bg));
 }
 #information_list{
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
 }
 #information_list > div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 #information_list > div > img:first-child {
   margin-right: 4px;
@@ -196,13 +235,23 @@ p, li {
 .card {
   background: var(--gradient);
   padding: 4px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   border-radius: 6px;
   border: var(--border-card);
-  border-top: var(--highlight);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-xl);
 }
 .card:hover {
   background: var(--gradient-hover);
+}
+.card_icon_rounded {
+  border-radius: 21px 6px 6px 6px;
+}
+.title_with_icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 5px;
 }
 
 
@@ -385,33 +434,103 @@ p, li {
 
 
 
-/* --- 1. Logique d'espacement vertical (space-y-4 en Tailwind) --- */
+/* --- Logique d'espacement vertical (space-y-4 en Tailwind) --- */
 .stack {
   display: flex;
   flex-direction: column;
   /*gap: 1rem; /* Environ 16px (gap-4) */
 }
 
-/* --- 2. Mise en page globale --- */
+/* --- Mise en page globale --- */
 .cv-layout {
   display: grid;
-      /* Equivalent de grid-cols-3 : 1 part à gauche, 2 parts à droite */
-      grid-template-columns: 1fr 3fr; 
-      align-items: start; /* Empêche d'étirer les colonnes inutilement */
+  /* Equivalent de grid-cols-3 : 1 part à gauche, 3 parts à droite */
+  grid-template-columns: 1fr 3fr; 
+  align-items: start; /* Empêche d'étirer les colonnes inutilement */
   padding: 10px;
-  
+  gap: 0 1rem; /* Espace entre les colonnes */
 }
 
-/* --- 3. Version Desktop (min-width: 768px ou plus) --- */
+/* --- Version Mobile --- */
 @media (max-width: 500px) {
   .cv-layout {
     display: flex;
-  flex-direction: column; /* Mobile : tout s'empile */
-  gap: 1.25rem; /* gap-5 (20px) */
-      }
-  
-  /* Pas besoin de définir col-span ici car :
-     - .sidebar prendra naturellement la 1ère colonne (1fr)
-     - .main-content prendra la 2ème colonne (2fr)
-  */
+    flex-direction: column; /* Mobile : tout s'empile */
+  }
+}
+
+
+
+
+/*.grid_cross {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+  /*text-align: center;
+  padding: 10px 0;
+}
+.grid_cross div:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 4%;
+    background: linear-gradient(90deg, transparent, black));
+}*/
+
+.grid_cross {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+  width: 100%;
+}
+
+.grid_cross div{
+  font-size: small;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative; /* Important pour positionner les traits */
+}
+
+/* --- DESSIN DES TRAITS --- */
+
+/* 1. Trait VERTICAL (Entre colonne 1 et 2) */
+
+/* Case Haut-Gauche : Trait vertical côté droit (du transparent vers le gris) */
+.grid_cross div:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--bg-dark));
+}
+
+/* Case Bas-Gauche : Trait vertical côté droit (du gris vers le transparent) */
+.grid_cross div:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--bg-dark), transparent);
+}
+
+
+/* 2. Trait HORIZONTAL (Entre ligne 1 et 2) */
+
+/* Case Haut-Gauche : Trait bas (du transparent vers le gris) */
+.grid_cross div:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--bg-dark));
+}
+
+/* Case Haut-Droite : Trait bas (du gris vers le transparent) */
+.grid_cross div:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--bg-dark), transparent);
 }

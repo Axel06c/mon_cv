@@ -1,5 +1,6 @@
 
 const html = document.documentElement;
+const ua = navigator.userAgent.toLowerCase();
 
 // Appliquer le thème par défaut selon le système
 html.style.setProperty('color-scheme', 'light');
@@ -110,7 +111,13 @@ function adjustSpacerHeight(valueFlat = -1) {
 // Écoute l'événement "avant impression"
 window.addEventListener('beforeprint', () => {
   console.log("Préparation de l'impression...");
+  if (ua.indexOf('firefox') > -1) {
+    adjustSpacerHeight(60); 
+} else if (ua.indexOf('chrome') > -1) {    
+  adjustSpacerHeight(74); 
+} else if (ua.indexOf('safari') > -1) {
   adjustSpacerHeight(60); 
+}
 });
 
 // Optionnel : Recalculer après (si l'impression modifie l'affichage écran)
