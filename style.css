@@ -534,3 +534,9 @@ p, li {
   height: 1px;
   background: linear-gradient(to right, var(--bg-dark), transparent);
 }
+
+
+.liste_competences {
+  display: flex;
+  flex-direction: column;
+}
