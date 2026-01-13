@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV Interactif</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div id="cv-container" class="page bg-dark">
+            <div id="header">
+                <div style="display: flex;">
+                    <div style="    height: clamp(55px, 8vw, 70px);
+                        width: auto;">
+                        <img src="images/Axel.jpg" style="height: 258%;
+                            width: auto; 
+                            box-shadow: var(--shadow);border: solid 4px var(--bg);
+  border-radius: 10px;
+  position: relative;">
+                    </div>
+                    <div style="display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    margin: 10px;">
+                        <div style="white-space: nowrap;    font-size: x-large;
+                        white-space: nowrap;
+                        font-weight: 400;">Axel Corneille</div>
+                        <div style="white-space: nowrap;font-weight: 100;">Ingénieur/développeur full-stack</div>
+                    </div>
+                </div>
+                
+                <div id="information_list" style="margin-left: auto;">
+                    <div>
+                        <img src="images/envelope.svg" style="
+                        height: auto;
+                        width: auto; 
+                        filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
+                        hsla(0, 0%, 100%, 0.15)))"> 
+                        axel.corneille@gmail.com
+                    </div>
+                    <div>
+                    <img src="images/telephone.svg" style="
+                    height: auto;
+                    width: auto; 
+                    filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
+                    hsla(0, 0%, 100%, 0.15)))"> 
+                    06 69 35 13 26</div>
+                    <div>
+                    <img src="images/geo-alt.svg" style="
+                    height: auto;
+                    width: auto; 
+                    filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
+                    hsla(0, 0%, 100%, 0.15)))"> 
+                    Nice</div>
+                    <div>
+                    <img src="images/linkedin.svg" style="
+                    height: auto;
+                    width: auto; 
+                    filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
+                    hsla(0, 0%, 100%, 0.15)))"> 
+                    @axel.corneille</div>
+                </div>
+            </div>
+
+            <div class="cv-layout">
+                <aside class="sidebar stack">
+                    <div id="spacer"></div>
+                    <div class="bg card">
+                        Profil
+                        <ul>
+                            <li>Volontaire</li>
+                            <li>Sérieux</li>
+                            <li>Sociable</li>
+                            <li>Travail d’équipe</li>
+                        </ul>
+                    </div>
+                    <div class="bg card">
+                        CENTRES D’INTERETS
+                        <ul>    
+                            <li>Nouvelles technologies</li>
+                            <li>Escalade</li>
+                            <li>Programmation</li>
+                            <li>Randonnée</li>
+                        </ul>
+                    </div>
+                    <div class="bg card">
+                        COMPETENCES
+                        <div style="font-size: small;">
+                            Backend
+                                PHP (Symfony), Python, Java, Windev, C++
+
+                            Frontend
+                                JavaScript, HTML5/CSS3 (Twig)
+
+                            DevOps & Outils
+                                Docker, Git (GitKraken), JetBrains,  CI/CD, Cron, Logigramme (Framework propriétaire)
+
+                            Gestion/Agilité
+                                Jira/Confluence (Suite Atlassian), Knowledge Management, Méthodes Agiles
+
+                            Soft Skills
+                                Force de proposition, vulgarisation technique, autonomie, Conduite du changement, Organisation, Knowledge management, Gestion des priorités
+
+                            Anglais
+                                Niveau B2, travail en contexte international possible
+                        </div>
+                    </div>
+                </aside>
+            
+                <main class="main-content stack">
+                    <div class="bg card">
+                        A propos
+                        <div>Ingénieur Développeur Full-Stack diplômé de Polytech, fort de 2 ans d’expérience (alternance & CDI). Spécialisé dans la résolution de problématiques complexes (legacy, refactoring) et le pilotage de projets agiles. Passionné par L’UI/UX et l'optimisation des processus d'équipe.</div>
+                    </div>
+                    <div class="bg card">
+                        EXPERIENCES PROFESSIONNELLES
+                        <div>
+                            Ingénieur/Développeur Full-Stack (CDI) - Depuis Avril. 2025
+                            BNC SA, Nice
+                                Maintien en condition opérationnelle (MCO) d'un système critique.
+                                Modernisation des outils de Knowledge Management.
+
+                            Développeur Full-Stack (alternance + CDD) - Sept. 2023 à Oct. 2024
+                            Akkodis Tours, pour EDF
+                                Conception d'un portail paramétrable et refonte des méthodes de travail.
+
+                            Développeur Full-Stack (CDD) - Juin 2022 à Janvier 2023
+                            Atline Service, Sophia Antipolis
+                                Développement d'un logiciel de gestion d'appels d'offres en Windev.
+                        </div>
+                    </div>
+                    <div class="bg card">
+                        PROJETS
+                        <div>
+                            Maintenance et Refactoring d’un système critique (Legacy) (BNC SA)
+                                Gestion et stabilisation d'une architecture monolithique complexe à forte dette technique.
+                                Rétro-ingénierie et analyse d’un modèle de données volumineux (+300 tables SQL).
+                                Pilotage du Maintien en Condition Opérationnelle (MCO) et mise en œuvre d'un refactoring progressif pour améliorer la maintenabilité.
+                                Expertise métier : Analyse approfondie des flux fonctionnels pour garantir la continuité de service sur un système de production.
+
+                            Développement d'un portail Web modulaire et paramétrable (Akkodis, pour EDF)
+                                Conception UI/UX intégrale centrée sur l'utilisateur et respectant les normes d'accessibilité (spécificités EDF).
+                                Ingénierie des besoins : Rédaction du cahier des charges technique et fonctionnel en collaboration directe avec les clients.
+                                Gestion de projet (Lead Technique) : Découpage des lots de travaux, planification des sprints et distribution des tâches aux collaborateurs.
+                                Architecture : Mise en place d’un système hautement configurable pour répondre à une grande diversité de cas d'usage.
+
+                            Optimisation des processus et de la méthodologie de gestion de projet (Akkodis)
+                                Audit et analyse critique de la méthodologie existante pour identifier les goulots d'étranglement.
+                                Conception et déploiement d’un nouveau workflow de production validé par les parties prenantes.
+                                Transformation digitale interne : Développement d'une interface de ticketing propriétaire facilitant la communication temps réel entre les clients et l'équipe technique.
+
+                            Système Embarqué de Captation Gestuelle (Projet scolaire)
+                                Traitement de données provenant de capteurs inertiels via Arduino (C++)
+                                Développement d'une application de synthèse sonore sous Android Studio (Java).
+                                Mise en œuvre d'algorithmes d'analyse de mouvements pour la génération audio en temps réel.
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="footer">
+                <div></div>
+                <div style="font-style: italic;
+                font-weight: 100;
+                font-size: small;">Références sur demande</div>
+            </div>
+
+            <!--<div class="bg card" style="margin: 5px;width: fit-content;">
+                <p class="text-muted">Mon CV ....</p>
+                <div class="bg-light" style="width: auto;box-shadow: var(--shadow);">
+                    <p class="text">Mon CV</p>
+                </div>
+            </div>-->
+
+
+            <button id="theme-toggle-btn" class="theme-toggle-btn no-print" title="Basculer entre mode clair et sombre">
+                <span id="theme-icon">🌙</span>
+            </button>
+    <!-- Bouton d'impression fixe -->
+    <button id="download-pdf-btn" class="download-btn no-print" title="Imprimer le CV">
+        🖨️ Imprimer
+    </button>
+
+    <!-- Sliders HSL en bas à gauche -->
+    <div class="hsl-controls no-print">
+        <div class="slider-group">
+            <label for="h-slider">H (Teinte)</label>
+            <input type="range" id="h-slider" min="0" max="360" value="190" class="slider">
+            <span class="slider-value" id="h-value">190</span>
+        </div>
+        <div class="slider-group">
+            <label for="s-slider">S (Saturation)</label>
+            <input type="range" id="s-slider" min="0" max="100" value="35" class="slider">
+            <span class="slider-value" id="s-value">35%</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
