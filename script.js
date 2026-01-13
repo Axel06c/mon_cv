@@ -116,7 +116,8 @@ window.addEventListener('beforeprint', () => {
 } else if (ua.indexOf('chrome') > -1) {    
   adjustSpacerHeight(74); 
 } else if (ua.indexOf('safari') > -1) {
-  adjustSpacerHeight(60); 
+  
+    adjustSpacerHeight(60); 
 }
 });
 

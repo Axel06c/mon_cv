@@ -148,8 +148,9 @@ ul {
 }
 
 p, li {
-  /* Entre 0.9rem et 1.1rem */
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: smaller;
+  margin: 0;
+  font-size: 0.8rem;
 }
 
 .svg {
@@ -502,7 +503,7 @@ p, li {
   position: absolute;
   right: 0; top: 0; bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--bg-dark));
+  background: linear-gradient(to bottom, transparent, var(--bg));
 }
 
 /* Case Bas-Gauche : Trait vertical côté droit (du gris vers le transparent) */
@@ -511,7 +512,7 @@ p, li {
   position: absolute;
   right: 0; top: 0; bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, var(--bg-dark), transparent);
+  background: linear-gradient(to bottom, var(--bg), transparent);
 }
 
 
@@ -523,7 +524,7 @@ p, li {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--bg-dark));
+  background: linear-gradient(to right, transparent, var(--bg));
 }
 
 /* Case Haut-Droite : Trait bas (du gris vers le transparent) */
@@ -532,11 +533,52 @@ p, li {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(to right, var(--bg-dark), transparent);
+  background: linear-gradient(to right, var(--bg), transparent);
 }
 
 
 .liste_competences {
   display: flex;
   flex-direction: column;
+}
+.bloc_et_gradient {
+  display: flex;
+  align-items: center;
+}
+.espace_competences {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 6px;
+}
+.shadow_all_childs div {
+  box-shadow: var(--shadow);
+}
+.bloc_et_gradient div:nth-child(1) {
+  white-space: nowrap;
+}
+.bloc_et_gradient div:nth-child(2) {
+  background: linear-gradient(to right, var(--bg), transparent);
+  height: 1px;
+  width: 100%;
+  margin-left: 4px;
+}
+.list_card_competences {
+  display: flex;
+  flex-wrap:wrap;
+}
+.list_card_competences div {
+  background-color: var(--bg-light);
+  width: fit-content;
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: var(--shadow);
+  margin: 2px;
+  border: solid 2px var(--bg);
+  font-size: 0.6rem;
+}
+
+.pill {
+  background-color: var(--bg);
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
 }
