@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 width="1147px" height="1147px" viewBox="0 0 1147 1147" enable-background="new 0 0 1147 1147" xml:space="preserve">
-<rect x="0" y="0" width="1147" height="1147" fill="rgb(255,255,255)" /><g transform="translate(62,62)"><g transform="translate(279,0) scale(0.31,0.31)"><g transform="" style="fill: rgb(0, 0, 0);">
+<rect x="0" y="0" width="1147" height="1147" fill="none" /><g transform="translate(62,62)"><g transform="translate(279,0) scale(0.31,0.31)"><g transform="" style="fill: rgb(0, 0, 0);">
 <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M49.984,99.824C45.848,69.47,28.497,53.961-0.345,49.773
 	c29.054-3.697,45.791-19.659,50.348-49.949c4.404,29.487,20.907,45.691,49.652,49.975C70.729,54.051,54.532,70.407,49.984,99.824z"
 	/>
@@ -1887,7 +1887,9 @@ width="1147px" height="1147px" viewBox="0 0 1147 1147" enable-background="new 0 
 <path d="M72.744-0.021H27.23c-2.341,0-4.612,0.297-6.771,0.875C15.679,2.11,11.418,4.648,8.04,8.09
 	c-0.617,0.621-1.206,1.284-1.752,1.96c-3.883,4.767-6.21,10.903-6.21,17.561L0.05,99.979h72.694
 	c14.971,0,27.138-12.397,27.138-27.63V27.625v-0.014l0.168-27.617C100.05-0.006,82.107-0.021,72.744-0.021z"/>
-</g></g><g transform="translate(341,341) scale(21.3125,21.3125)" width="341" height="341"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
-  <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-</svg></g></g></svg>
+</g></g><g transform="translate(341,341) scale(21.3125,21.3125)" width="341" height="341">
+
+<path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z"/>
+
+</g></g></svg>

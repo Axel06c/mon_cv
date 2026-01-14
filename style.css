@@ -142,15 +142,28 @@ h2 {
   font-weight: 300;
   margin: 0;
 }
-
-ul {
-  margin: 0;
+h3 { 
+  margin: 0; 
+  font-size: 14px; 
+  color: #1f2937; 
 }
 
-p, li {
+/* Liste des tâches */
+ul { 
+  margin: 10px 0 0 10px; 
+  padding-left: 12px; 
+  border-left: 2px solid #dbeafe; 
+  list-style: none; 
+}
+li { font-size: 12px; color: #4b5563; margin-bottom: 4px; position: relative; }
+li::before { /*content: "•";*/ position: absolute; left: -10px; color: #60a5fa; }
+
+p {
   font-size: smaller;
-  margin: 0;
+  margin: 4px;
   font-size: 0.8rem;
+  /*margin: 9px 9px 9px 73px;*/
+  text-align: justify;
 }
 
 .svg {
@@ -582,3 +595,61 @@ p, li {
   border-radius: 15px;
   padding: 5px 10px 5px 10px;
 }
+
+
+
+
+
+
+
+/* Timeline */
+/* Conteneur principal de la timeline */
+.timeline {
+  position: relative;
+  padding-left: 30px; /* Espace pour la ligne à gauche */
+  font-family: sans-serif;
+  max-width: 500px;
+}
+
+/* La ligne verticale dégradée */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 5px;
+  bottom: 5px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--bg), var(--bg));
+}
+
+.timeline .experience:last-child {
+  margin-bottom: 0px;
+}
+
+/* Bloc d'expérience individuelle */
+.experience {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Le point sur la timeline */
+.dot {
+  position: absolute;
+  left: -30px; /* Aligne le point sur la ligne ::before */
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--bg);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+/* Typographie et petits éléments */
+.header { display: flex; justify-content: space-between; align-items: flex-start; }
+.badge { background: #dbeafe; color: #1d4ed8; font-size: 10px; padding: 2px 8px; border-radius: 99px; }
+.company { font-size: 12px; color: #4b5563; margin: 4px 0; }
+.date { font-size: 11px; color: #6b7280;display: flex;
+  align-items: flex-end;}
+

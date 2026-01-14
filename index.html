@@ -52,7 +52,9 @@
 
             <div class="cv-layout">
                 <aside class="sidebar stack">
-                    <div id="spacer"></div>
+                    <div id="spacer" style="display: flex; flex-direction: row-reverse;">
+                        <img src="images/qr-code.svg" style="height: inherit;">
+                    </div>
                     <div class="bg card card_icon_rounded">
                         <div class="title_with_icon">
                             <div class="svg_container_round">
@@ -109,7 +111,6 @@
                                     <div>JetBrains</div>
                                     <div>CI/CD</div>
                                     <div>Cron</div>
-                                    <div>Logigramme (Framework propriétaire)</div>
                                 </div>
                             </div>
                             <div>
@@ -136,17 +137,6 @@
                                     <div>Gestion des priorités</div>
                                 </div>
                             </div>
-                                
-                            <div>
-                                <div class="bloc_et_gradient">
-                                    <div>Anglais</div>
-                                    <div></div>
-                                </div>
-                                <div class="list_card_competences">
-                                    <div>Niveau B2</div>
-                                    <div>Travail en contexte international possible</div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="bg card card_icon_rounded">
@@ -164,6 +154,18 @@
                             <div>Randonnée</div>
                         </div>
                     </div>
+                    <div class="bg card card_icon_rounded">
+                        <div class="title_with_icon">
+                            <div class="svg_container_round">
+                                <img src="images/translate.svg" class="svg">
+                            </div>
+                            <div>Anglais</div>
+                        </div>
+                        <ul>
+                            <li>Niveau B2</li>
+                            <li>Travail en contexte international possible</li>
+                        </ul>
+                    </div>
                 </aside>
             
                 <main class="main-content stack">
@@ -174,25 +176,76 @@
                         </div>
                         <p>Ingénieur Développeur Full-Stack diplômé de Polytech, fort de 2 ans d’expérience (alternance & CDI). Spécialisé dans la résolution de problématiques complexes (legacy, refactoring) et le pilotage de projets agiles. Passionné par L’UI/UX et l'optimisation des processus d'équipe.</p>
                     </div>
-                    <div class="bg card">
-                        EXPERIENCES PROFESSIONNELLES
-                        <div>
-                            Ingénieur/Développeur Full-Stack (CDI) - Depuis Avril. 2025
-                            BNC SA, Nice
-                                Maintien en condition opérationnelle (MCO) d'un système critique.
-                                Modernisation des outils de Knowledge Management.
-
-                            Développeur Full-Stack (alternance + CDD) - Sept. 2023 à Oct. 2024
-                            Akkodis Tours, pour EDF
-                                Conception d'un portail paramétrable et refonte des méthodes de travail.
-
-                            Développeur Full-Stack (CDD) - Juin 2022 à Janvier 2023
-                            Atline Service, Sophia Antipolis
-                                Développement d'un logiciel de gestion d'appels d'offres en Windev.
+                    <div class="bg card card_icon_rounded">
+                        <div class="bloc_et_gradient shadow_all_childs">
+                            <div class="pill">Expériences professionelles</div>
+                            <div style="margin-left: 0px;"></div>
+                        </div>
+                        <div class="timeline">
+                            <div class="experience">
+                                <div class="dot"></div>
+                                <div class="card">
+                                    <div class="header">
+                                        <h3>Ingénieur/Développeur Full-Stack (CDI)</h3>
+                                        <span class="badge">Actuel</span>
+                                    </div>
+                                    <p class="company">BNC SA · Nice</p>
+                                    <div class="date">
+                                        
+                                        <img src="/images/calendar4-week.svg" class="svg">
+                                        Avril. 2025 - Présent
+                                    </div>
+                                    
+                                    <ul>
+                                        
+                                <li>Maintien en condition opérationnelle (MCO) d'un système critique.</li>
+                                <li>Modernisation des outils de Knowledge Management.</li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                    
+                            <div class="experience">
+                                <div class="dot"></div>
+                                <div class="card">
+                                    <div class="header">
+                                        <h3>Développeur Full-Stack (alternance + CDD)</h3>
+                                    </div>
+                                    <p class="company">Akkodis, pour EDF · Tours</p>
+                                    <div class="date">
+                                        <img src="/images/calendar4-week.svg" class="svg"> 
+                                        Sept. 2023 - Oct. 2024
+                                    </div>
+                                    <ul>
+                                        
+                                        <li>Conception d'un portail paramétrable et refonte des méthodes de travail.</li>
+                                                
+                                            </ul>
+                                </div>
+                            </div>
+                            <div class="experience">
+                                <div class="dot"></div>
+                                <div class="card">
+                                    <div class="header">
+                                        <h3>Développeur Full-Stack (CDD)</h3>
+                                    </div>
+                                    <p class="company">Atline Service · Sophia Antipolis</p>
+                                    <div class="date">
+                                        <img src="/images/calendar4-week.svg" class="svg">
+                                        Juin 2022 - Janvier 2023
+                                    </div>
+                                    <ul>
+                                        <li>Développement d'un logiciel de gestion d'appels d'offres en Windev.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg card">
-                        PROJETS
+                    <div class="bg card card_icon_rounded">
+                        <div class="bloc_et_gradient shadow_all_childs">
+                            <div class="pill">Projets</div>
+                            <div style="margin-left: 0px;"></div>
+                        </div>
                         <div>
                             Maintenance et Refactoring d’un système critique (Legacy) (BNC SA)
                                 Gestion et stabilisation d'une architecture monolithique complexe à forte dette technique.
@@ -234,7 +287,7 @@
             </div>-->
 
 
-            <button id="theme-toggle-btn" class="theme-toggle-btn no-print" title="Basculer entre mode clair et sombre">
+            <button style="display: none;" id="theme-toggle-btn" class="theme-toggle-btn no-print" title="Basculer entre mode clair et sombre">
                 <span id="theme-icon">🌙</span>
             </button>
     <!-- Bouton d'impression fixe -->
