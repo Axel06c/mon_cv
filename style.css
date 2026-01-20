@@ -19,9 +19,12 @@
   --highlight: light-dark(hsl(var(--h), var(--s), 100%), hsl(var(--h), var(--s), 60%));
   --border-card: solid 2px var(--bg);
 
-  --shadow-xl: 0 25px 50px -12px light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.15));
-  --shadow: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
-  hsla(0, 0%, 100%, 0.07)), 0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 100%, 0.15));
+  --shadow-xs: 0px 0px 5px light-dark(hsla(0, 0%, 0%, 0.07), 
+  hsla(0, 0%, 100%, 1));
+  --shadow-xl: -4px 8px 12px -2px light-dark(rgba(0, 0, 0, 0.25), 
+  rgba(255, 255, 255, 0.15));
+  --shadow: -1px 2px 4px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
+  hsla(0, 0%, 100%, 0.07));
   --shadow-bottom: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
   hsla(0, 0%, 100%, 0.07)), 0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 100%, 0.15))
 }
@@ -134,7 +137,7 @@ body {
 h1 {
   /* Entre 1.5rem (mobile) et 2.5rem (desktop) */
   font-size: x-large;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
 }
 h2 {
@@ -145,12 +148,12 @@ h2 {
 h3 { 
   margin: 0; 
   font-size: 14px; 
-  color: #1f2937; 
+  font-weight: 500;
 }
 
 /* Liste des tâches */
 ul { 
-  margin: 10px 0 0 10px; 
+  margin: 5px 0 0 10px; 
   padding-left: 12px; 
   border-left: 2px solid #dbeafe; 
   list-style: none; 
@@ -161,7 +164,7 @@ li::before { /*content: "•";*/ position: absolute; left: -10px; color: #60a5fa
 p {
   font-size: smaller;
   margin: 4px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   /*margin: 9px 9px 9px 73px;*/
   text-align: justify;
 }
@@ -183,6 +186,15 @@ p {
   align-items: center;
   
   box-shadow: var(--shadow);
+}
+.calendrier {
+  margin-left: 5px;
+  margin-right: 8px;
+  width: 1.1em;
+  height: -webkit-fill-available;
+}
+.suitcase {
+  margin: 0px 5px 0px 4px;
 }
 
 /* Conteneur A4 */
@@ -266,6 +278,55 @@ p {
   align-items: center;
   gap: 4px;
   margin-bottom: 5px;
+}
+.card.card_icon_rounded > div:first-child > div {
+  font-weight: 400;
+}
+.card_timeline {
+  background: var(--gradient);
+  padding: 4px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  display: flex;
+}
+.timeline_card_main_content {
+  flex-grow: 1;
+}
+.card_projets {
+  background: var(--gradient);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 3px hsl(var(--h) var(--s) 71%);
+  box-shadow: var(--shadow);
+  border-radius: 21px;
+  padding: 8px;
+}
+
+.card_projets_header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.projet_title {
+  font-weight: 500;
+  font-size: small;
+  text-align: left;
+  align-self: center;
+  margin-right: 8px;
+}
+.projet_date {
+  background-color: hsl(var(--h) var(--s) 72%);
+  padding: 3px 8px 3px 8px;
+  border-radius: 21px;
+  font-size: 0.7em;
+  margin: -1px -2px 0px 0px;
+}
+.projet_description {
+   font-size: 0.7em;
+   margin-top: 4px;
+   text-align: justify;
 }
 
 
@@ -461,7 +522,7 @@ p {
   /* Equivalent de grid-cols-3 : 1 part à gauche, 3 parts à droite */
   grid-template-columns: 1fr 3fr; 
   align-items: start; /* Empêche d'étirer les colonnes inutilement */
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
   gap: 0 1rem; /* Espace entre les colonnes */
 }
 
@@ -497,13 +558,13 @@ p {
 }
 
 .grid_cross div{
-  font-size: small;
-  padding: 5px;
+  padding: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative; /* Important pour positionner les traits */
+  font-size: 0.6rem;
+  position: relative;/* Important pour positionner les traits */
 }
 
 /* --- DESSIN DES TRAITS --- */
@@ -584,7 +645,7 @@ p {
   width: fit-content;
   border-radius: 10px;
   padding: 4px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-xs);
   margin: 2px;
   border: solid 2px var(--bg);
   font-size: 0.6rem;
@@ -636,7 +697,7 @@ p {
 .dot {
   position: absolute;
   left: -30px; /* Aligne le point sur la ligne ::before */
-  top: 10px;
+  top: 4px;
   width: 12px;
   height: 12px;
   background-color: var(--bg);
@@ -647,9 +708,38 @@ p {
 }
 
 /* Typographie et petits éléments */
-.header { display: flex; justify-content: space-between; align-items: flex-start; }
-.badge { background: #dbeafe; color: #1d4ed8; font-size: 10px; padding: 2px 8px; border-radius: 99px; }
-.company { font-size: 12px; color: #4b5563; margin: 4px 0; }
-.date { font-size: 11px; color: #6b7280;display: flex;
-  align-items: flex-end;}
+.timeline_header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  margin-bottom: 4px;
+}
+.badge { 
+  background: #dbeafe; 
+  color: #1d4ed8; 
+  font-size: 10px; 
+  padding: 2px 8px; 
+  border-radius: 99px; 
+}
+.company { 
+  font-size: 12px; 
+  color: #4b5563; 
+  margin: 0; 
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.timeline_location_icon {
+  margin: 0px 4px 0px 4px;
+}
+.date { 
+  font-size: 11px; 
+  color: #6b7280;
+  display: flex;
+  align-items: flex-end;
+}
+.date > div:last-child {
+  text-align: center;
+  padding-top: 2px;
+}
 
