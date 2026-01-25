@@ -47,19 +47,15 @@ document.getElementById('theme-toggle-btn').addEventListener('click', () => {
 //////////// Sliders HSL ////////////
 const hSlider = document.getElementById('h-slider');
 const sSlider = document.getElementById('s-slider');
-const hValue = document.getElementById('h-value');
-const sValue = document.getElementById('s-value');
 
 // Fonction pour mettre à jour la variable CSS --h
 function updateH(value) {
   html.style.setProperty('--h', value);
-  hValue.textContent = value;
 }
 
 // Fonction pour mettre à jour la variable CSS --s
 function updateS(value) {
   html.style.setProperty('--s', value + '%');
-  sValue.textContent = value + '%';
 }
 
 // Événements pour le slider H
@@ -94,7 +90,7 @@ function adjustSpacerHeight(valueFlat = -1) {
   const spacerTop = spacerRect.top;
   
   // Calculer la hauteur nécessaire pour atteindre le bas de l'image
-  var heightNeeded = imageBottom - spacerTop + 14;
+  var heightNeeded = imageBottom - spacerTop + 7;
 
   if (typeof valueFlat === 'number' && valueFlat !== -1) {
     heightNeeded = valueFlat;

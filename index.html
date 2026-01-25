@@ -53,7 +53,7 @@
             <div class="cv-layout">
                 <aside class="sidebar stack">
                     <div id="spacer" style="display: flex; flex-direction: row-reverse;">
-                        <img src="images/qr-code.svg" style="height: inherit;max-width: 64px;">
+                        <img src="images/qr-code.svg" style="height: inherit;max-width: 48px;">
                     </div>
                     <div class="bg card card_icon_rounded">
                         <div class="title_with_icon">
@@ -348,35 +348,10 @@
                 font-size: small;">Références sur demande</div>
             </div>
 
-            <!--<div class="bg card" style="margin: 5px;width: fit-content;">
-                <p class="text-muted">Mon CV ....</p>
-                <div class="bg-light" style="width: auto;box-shadow: var(--shadow);">
-                    <p class="text">Mon CV</p>
-                </div>
-            </div>-->
-
-
             <button style="display: none;" id="theme-toggle-btn" class="theme-toggle-btn no-print" title="Basculer entre mode clair et sombre">
                 <span id="theme-icon">🌙</span>
             </button>
-    <!-- Bouton d'impression fixe -->
-    <button id="download-pdf-btn" class="download-btn no-print" title="Imprimer le CV">
-        🖨️ Imprimer
-    </button>
 
-    <!-- Sliders HSL en bas à gauche -->
-    <div class="hsl-controls no-print">
-        <div class="slider-group">
-            <label for="h-slider">H (Teinte)</label>
-            <input type="range" id="h-slider" min="0" max="360" value="190" class="slider">
-            <span class="slider-value" id="h-value">190</span>
-        </div>
-        <div class="slider-group">
-            <label for="s-slider">S (Saturation)</label>
-            <input type="range" id="s-slider" min="0" max="100" value="35" class="slider">
-            <span class="slider-value" id="s-value">35%</span>
-        </div>
-    </div>
     <div id="floating-widget" class="widget-container no-print">
         
         <div class="bubble">
@@ -384,10 +359,16 @@
         </div>
 
         <ul class="menu-options">
-            <li onclick="alert('Profil')">👤 Profil</li>
-            <li onclick="alert('Paramètres')">⚙️ Paramètres</li>
-            <li onclick="alert('Notifications')">🔔 Notifications</li>
-            <li onclick="alert('Déconnexion')" style="color: #ff4757;">🚪 Sortir</li>
+            <li id="download-pdf-btn">🖨️ Imprimer</li>
+
+            <li>
+                <label for="h-slider">H (Teinte)</label>
+                <input type="range" id="h-slider" min="0" max="360" value="190" class="slider">
+            </li>
+            <li>
+                <label for="s-slider">S (Saturation)</label>
+                <input type="range" id="s-slider" min="0" max="100" value="35" class="slider">
+            </li>
         </ul>
 
     </div>

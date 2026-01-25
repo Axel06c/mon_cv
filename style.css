@@ -394,34 +394,6 @@ p {
   }
 }
 
-/* Bouton de téléchargement PDF fixe */
-.download-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.download-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
-}
-
-.download-btn:active {
-  transform: translateY(0);
-}
-
 /* Contrôles HSL en bas à gauche */
 .hsl-controls {
   position: fixed;
@@ -716,6 +688,7 @@ p {
   justify-content: space-between; 
   align-items: flex-start; 
   margin-bottom: 4px;
+  flex-wrap: wrap;
 }
 .badge { 
   background: #dbeafe; 
@@ -731,6 +704,7 @@ p {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  margin-left: auto;
 }
 .timeline_location_icon {
   margin: 0px 4px 0px 4px;
@@ -773,7 +747,7 @@ p {
 .bubble {
   width: 60px;
   height: 60px;
-  background: #2f3640;
+  background: hsl(var(--h), var(--s), 50%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -793,7 +767,7 @@ p {
 
 /* Changement d'icône quand ouvert */
 .widget-container.open .bubble {
-  background: #3498db;
+  background: light-dark(hsl(var(--h), var(--s), 60%),hsl(var(--h), var(--s), 40%));
   transform: rotate(90deg);
 }
 
