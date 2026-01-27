@@ -63,7 +63,7 @@
 /* Styles pour l'impression avec @media print natif */
 @media print {
   @page {
-    margin: 0mm; /* Ou une petite marge de sécurité : 5mm */
+    margin: 5mm; /* Ou une petite marge de sécurité : 5mm */
     size: A4;
   }
 
@@ -85,23 +85,12 @@
     width: 100% !important;
     height: 100% !important;
   }
-
-  body{
-    /*zoom: 80%;*/
-  }
   
   /* Style du conteneur CV pour l'impression */
   #cv-container {
     width: 100% !important; 
     height: 100% !important;
-    max-width: 100% !important;
-    min-height: 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    page-break-inside: avoid;
+    /*page-break-inside: avoid;*/
     /* On s'assure que la couleur de fond actuelle est bien appliquée */
     background-color: var(--bg-dark) !important;
         
@@ -130,8 +119,8 @@ body {
     background-color: hsl(var(--h), var(--s), 50%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start; 
 }
 body::-webkit-scrollbar {
   display: none;
@@ -203,7 +192,7 @@ p {
 #cv-container {
   /* clamp(MIN, VALEUR IDÉALE, MAX) */
   /* Min: 320px, Idéal: 95vw, Max: 21cm (A4) */
-  width: clamp(384px, 95vw, 21cm);
+  width: clamp(389px, 95vw, 21cm);
   
   /* Pour la hauteur, on veut garder le ratio A4 le plus possible */
   /* Mais sur mobile, on laisse le contenu définir la hauteur */
