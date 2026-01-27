@@ -1,3 +1,10 @@
+if (navigator.userAgent.indexOf('Safari') > -1 && navigator.userAgent.indexOf('Chrome') <= -1) {
+  // On est sur Safari
+  if (navigator.userAgent.indexOf('Macintosh') > -1) {
+     // On est sur Mac (Desktop)
+     document.body.classList.add('is-mac-safari');
+  }
+}
 
 const html = document.documentElement;
 const ua = navigator.userAgent.toLowerCase();

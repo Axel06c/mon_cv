@@ -55,16 +55,16 @@
 }
 /* Suppression des marges de page pour l'impression */
 @page {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0 ;
+  padding: 0 ;
   size: A4;
 }
 
 /* Styles pour l'impression avec @media print natif */
 @media print {
   @page {
-    margin: 5mm; /* Ou une petite marge de sécurité : 5mm */
-    size: A4;
+    margin: 0; 
+    size: auto; 
   }
 
   /* OBLIGATOIRE : Force le navigateur à imprimer les couleurs exactes (fonds sombres inclus) */
@@ -81,11 +81,20 @@
   /* Réinitialiser html et body pour l'impression */
   html, body {
     margin: 0 !important;
-    padding: 0 !important;
-    width: 21cm !important;
-    height: 29.7cm !important;
+    background-color: white !important;
+    box-shadow: none;
   }
-  
+  body {
+    padding-top: 10mm;   /* Marge haut standard */
+    padding-left: 10mm;  /* Marge gauche */
+    padding-right: 10mm; /* Marge droite */
+    padding-bottom: 10mm;/* Marge bas */
+    
+    min-height: 100%; 
+    box-sizing: border-box;
+    overflow: visible !important;
+    height: auto !important;
+  }
   /* Style du conteneur CV pour l'impression */
   #cv-container {
     width: 100% !important; 
@@ -94,10 +103,6 @@
   }
 
 }
-  #cv-layout {
-    max-height: 100px;
-    overflow: hidden;
-  }
 
 * {
   font-weight: 200;
@@ -110,7 +115,6 @@ body {
     margin: 0;
     padding: 18px;
     background-color: hsl(var(--h), var(--s), 50%);
-    height: 100vh;
     display: flex;
     
     justify-content: center;
@@ -144,7 +148,7 @@ ul {
   border-left: 2px solid #dbeafe; 
   list-style: none; 
 }
-li { font-size: 12px; color: #4b5563; margin-bottom: 4px; position: relative; }
+li { font-size: 0.7rem; color: #4b5563; margin-bottom: 4px; position: relative; }
 li::before { /*content: "•";*/ position: absolute; left: -10px; color: #60a5fa; }
 
 p {
