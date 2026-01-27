@@ -283,6 +283,7 @@ p {
 }
 .card.card_icon_rounded > div:first-child > div {
   font-weight: 400;
+  font-size: 0.95em;
 }
 .card_timeline {
   background: var(--gradient);
