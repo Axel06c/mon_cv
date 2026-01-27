@@ -82,25 +82,22 @@
   html, body {
     margin: 0 !important;
     padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
+    width: 21cm !important;
+    height: 29.7cm !important;
   }
   
   /* Style du conteneur CV pour l'impression */
   #cv-container {
     width: 100% !important; 
     height: 100% !important;
-    /*page-break-inside: avoid;*/
-    /* On s'assure que la couleur de fond actuelle est bien appliquée */
     background-color: var(--bg-dark) !important;
-        
-    /* Double sécurité pour Chrome */
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
   }
 
-  
 }
+  #cv-layout {
+    max-height: 100px;
+    overflow: hidden;
+  }
 
 * {
   font-weight: 200;
@@ -110,15 +107,12 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    /*font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    line-height: 1.6;*/
     margin: 0;
     padding: 18px;
     background-color: hsl(var(--h), var(--s), 50%);
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
+    
     justify-content: center;
     align-items: flex-start; 
 }
@@ -196,7 +190,7 @@ p {
   
   /* Pour la hauteur, on veut garder le ratio A4 le plus possible */
   /* Mais sur mobile, on laisse le contenu définir la hauteur */
-  min-height: clamp(500px, 141.4vw, 29.7cm);
+  height: clamp(500px, 141.4vw, 29.7cm);
   display: flex;
   flex-direction: column;
   
