@@ -1,3 +1,4 @@
+/***************** Constantes CSS ******************/
 :root {
   --p-width: 21cm;
   --p-height: 29.7cm;
@@ -10,7 +11,6 @@
   --bg-dark: light-dark(hsl(var(--h), var(--s), 85%),hsl(var(--h), var(--s), 0%));
   --text: light-dark(hsl(var(--h), var(--s), 5%), hsl(var(--h), var(--s), 95%));
   --bg: light-dark(hsl(var(--h), var(--s), 93%), hsl(var(--h), var(--s), 13%));
-  --text-muted: light-dark(hsl(var(--h), var(--s), 30%), hsl(var(--h), var(--s), 70%));
   --bg-light: light-dark(hsl(var(--h), var(--s), 100%), hsl(var(--h), var(--s), 20%));
 
   --border: light-dark(hsl(var(--h), var(--s), 70%), hsl(var(--h), var(--s), 30%));
@@ -18,6 +18,9 @@
   --gradient-hover: linear-gradient(0deg, var(--bg-dark), var(--bg));
   --highlight: light-dark(hsl(var(--h), var(--s), 100%), hsl(var(--h), var(--s), 60%));
   --border-card: solid 2px var(--bg);
+
+  --border-radius: 10px;
+  --border-radius-high: 21px;
 
   --shadow-xs: 0px 0px 5px light-dark(hsla(0, 0%, 0%, 0.07), 
   hsla(0, 0%, 100%, 1));
@@ -28,38 +31,14 @@
   --shadow-bottom: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
   hsla(0, 0%, 100%, 0.07)), 0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 100%, 0.15))
 }
+/****************/
 
-/* Forcer le mode via une classe ou un attribut */
-.dark-theme {
-  color-scheme: dark;
-}
-
-.light-theme {
-  color-scheme: light;
-}
-
-.bg-light {
-  background-color: var(--bg-light);
-}
-.bg-dark {
-  background-color: var(--bg-dark);
-}
-.bg {
-  background-color: var(--bg);
-}
-.text-muted {
-  color: var(--text-muted);
-}
-.text {
-  color: var(--text);
-}
-/* Suppression des marges de page pour l'impression */
+/**************** FORMAT D'IMPRESSION *****************/
 @page {
   margin: 0 !important;
   padding: 0 !important;
   size: A4;
 }
-
 /* Styles pour l'impression avec @media print natif */
 @media print {
   @page {
@@ -82,8 +61,8 @@
   html, body {
     margin: 0 !important;
     padding: 0 !important;
-    width: 21cm !important;
-    height: 29.7cm !important;
+    width: var(--p-width) !important;
+    height: var(--p-height) !important;
   }
   
   /* Style du conteneur CV pour l'impression */
@@ -94,36 +73,28 @@
   }
 
 }
+/*****************/
 
-
-#cv-layout {
-  max-height: 100px;
-  overflow: hidden;
-}
-
+/****************** BASE *********************/
 * {
   font-weight: 200;
 }
-
-
-
 body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 18px;
-    background-color: hsl(var(--h), var(--s), 50%);
-    height: 100vh;
-    display: flex;
-    
-    justify-content: center;
-    align-items: flex-start; 
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 18px;
+  background-color: hsl(var(--h), var(--s), 50%);
+  height: 100vh;
+  display: flex;
+  
+  justify-content: center;
+  align-items: flex-start; 
 }
 body::-webkit-scrollbar {
   display: none;
 }
-
 h1 {
-  /* Entre 1.5rem (mobile) et 2.5rem (desktop) */
+/* Entre 1.5rem (mobile) et 2.5rem (desktop) */
   font-size: x-large;
   font-weight: 600;
   margin: 0;
@@ -138,8 +109,6 @@ h3 {
   font-size: 14px; 
   font-weight: 500;
 }
-
-/* Liste des tâches */
 ul { 
   margin: 5px 0 0 10px; 
   padding-left: 12px; 
@@ -158,7 +127,6 @@ li::before {
   left: -10px; 
   color: #60a5fa; 
 }
-
 p {
   font-size: smaller;
   margin: 4px;
@@ -166,7 +134,10 @@ p {
   /*margin: 9px 9px 9px 73px;*/
   text-align: justify;
 }
+/**************/
 
+
+/************* GESTION DES IMAGES ***************/
 .svg {
   height: auto;
   width: auto; 
@@ -193,36 +164,28 @@ p {
 .suitcase {
   margin: 0px 5px 0px 4px;
 }
+/*********/
 
-/* Conteneur A4 */
-#cv-container {
-  /* clamp(MIN, VALEUR IDÉALE, MAX) */
-  /* Min: 320px, Idéal: 95vw, Max: 21cm (A4) */
-  width: clamp(389px, 95vw, 21cm);
-  
-  /* Pour la hauteur, on veut garder le ratio A4 le plus possible */
-  /* Mais sur mobile, on laisse le contenu définir la hauteur */
-  height: clamp(500px, 141.4vw, 29.7cm);
-  display: flex;
-  flex-direction: column;
-  
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
 
-.cv-layout {
-  flex: 1;
+/************ Paramètres globaux ***************/
+.bg-light {
   background-color: var(--bg-light);
 }
-
-#footer {
-  padding: 4px;
-  background-color: var(--bg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.bg-dark {
+  background-color: var(--bg-dark);
 }
+.bg {
+  background-color: var(--bg);
+}
+.pill {
+  background-color: var(--bg);
+  border-radius: var(--border-radius-high);
+  padding: 5px 10px 5px 10px;
+}
+/************/
+
+
+/*********** Affichage global ***********/
 #header {
   display: flex;
   flex-wrap: wrap;
@@ -233,6 +196,42 @@ p {
   padding: 10px;
   background-color:linear-gradient(135deg, var(--bg-dark), var(--bg));
 }
+/* Conteneur A4 */
+#cv-container {
+  /* clamp(MIN, VALEUR IDÉALE, MAX) */
+  /* Min: 320px, Idéal: 95vw, Max: 21cm (A4) */
+  width: clamp(389px, 95vw, var(--p-width));
+  
+  /* Pour la hauteur, on veut garder le ratio A4 le plus possible */
+  /* Mais sur mobile, on laisse le contenu définir la hauteur */
+  height: clamp(500px, 141.4vw, var(--p-height));
+  display: flex;
+  flex-direction: column;
+  
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+#cv-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr; 
+  align-items: start;
+  padding: 5px 10px 10px 10px;
+  gap: 0 1rem;
+  flex: 1;
+  background-color: var(--bg-light);
+}
+#footer {
+  padding: 4px;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*******************/
+
+
+/********* Liste des informations perso ***********/
 #information_list{
   margin-left: auto;
   display: flex;
@@ -253,22 +252,24 @@ p {
   font-weight: 100;
   font-size: clamp(0.7rem, 2vw, 0.9rem);
 }
+/*********************/
 
 
+/************* Cartes globales ***********/
 .card {
   background: var(--gradient);
   padding: 4px;
   margin-top: 7px;
   margin-bottom: 7px;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   border: var(--border-card);
   box-shadow: var(--shadow-xl);
 }
 .card:hover {
   background: var(--gradient-hover);
 }
-.card_icon_rounded {
-  border-radius: 21px 6px 6px 6px;
+.card_topleft_corner_rounded {
+  border-radius: var(--border-radius-high) var(--border-radius) var(--border-radius) var(--border-radius);
 }
 .title_with_icon {
   display: flex;
@@ -276,32 +277,40 @@ p {
   gap: 4px;
   margin-bottom: 5px;
 }
-.card.card_icon_rounded > div:first-child > div {
+/* Pour le titre des cartes */
+.card.card_topleft_corner_rounded > div:first-child > div {
   font-weight: 400;
   font-size: 0.95em;
 }
+/**************/
+
+
+/************ Expériences professionelles **********/
 .card_timeline {
   background: var(--gradient);
   padding: 4px;
   margin-top: 7px;
   margin-bottom: 7px;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   display: flex;
 }
 .timeline_card_main_content {
   flex-grow: 1;
 }
+/**************/
+
+
+/*************** Projets *************/
 .card_projets {
   background: var(--gradient);
   margin-top: 10px;
   margin-bottom: 10px;
   border: solid 3px hsl(var(--h) var(--s) 71%);
   box-shadow: var(--shadow);
-  border-radius: 21px;
+  border-radius: var(--border-radius-high);
   padding: 8px;
 }
-
 .card_projets_header {
   display: flex;
   align-items: flex-start;
@@ -317,7 +326,7 @@ p {
 .projet_date {
   background-color: hsl(var(--h) var(--s) 72%);
   padding: 3px 8px 3px 8px;
-  border-radius: 21px;
+  border-radius: var(--border-radius-high);
   font-size: 0.7em;
   margin: -1px -2px 0px 0px;
 }
@@ -326,102 +335,10 @@ p {
    margin-top: 4px;
    text-align: justify;
 }
+/********************/
 
 
-
-
-
-
-
-/* Bouton toggle theme fixé en haut à gauche */
-.theme-toggle-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  background: var(--bg-light);
-  color: var(--text);
-  border: 2px solid var(--text-muted);
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-}
-
-.theme-toggle-btn:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  border-color: var(--text);
-}
-
-.theme-toggle-btn:active {
-  transform: scale(0.95) rotate(0deg);
-}
-
-.theme-toggle-btn #theme-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle-btn:hover #theme-icon {
-  transform: scale(1.2);
-}
-
-/* Animation de rotation pour le soleil */
-.theme-toggle-btn #theme-icon.sun {
-  animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Contrôles HSL en bas à gauche */
-.hsl-controls {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: var(--bg-light);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  border: 2px solid var(--text-muted);
-  min-width: 200px;
-}
-
-.slider-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.slider-group:last-child {
-  margin-bottom: 0;
-}
-
-.slider-group label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-
+/*************** Slider ****************/
 .slider {
   width: 100%;
   height: 6px;
@@ -432,7 +349,6 @@ p {
   appearance: none;
   cursor: pointer;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -445,12 +361,10 @@ p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
 }
-
 .slider::-webkit-slider-thumb:hover {
   transform: scale(1.2);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
-
 .slider::-moz-range-thumb {
   width: 18px;
   height: 18px;
@@ -461,72 +375,37 @@ p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
 }
-
 .slider::-moz-range-thumb:hover {
   transform: scale(1.2);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
-
-.slider-value {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-align: right;
-  margin-top: 4px;
-}
+/*******************/
 
 
-
-
-
-/* --- Logique d'espacement vertical (space-y-4 en Tailwind) --- */
-.stack {
+/**************** Gestion de la grid principale ************/
+.sidebar {
   display: flex;
   flex-direction: column;
-  /*gap: 1rem; /* Environ 16px (gap-4) */
 }
+/*****************/
 
-/* --- Mise en page globale --- */
-.cv-layout {
-  display: grid;
-  /* Equivalent de grid-cols-3 : 1 part à gauche, 3 parts à droite */
-  grid-template-columns: 1fr 3fr; 
-  align-items: start; /* Empêche d'étirer les colonnes inutilement */
-  padding: 5px 10px 10px 10px;
-  gap: 0 1rem; /* Espace entre les colonnes */
-}
 
-/* --- Version Mobile --- */
+/***************** Version Mobile *****************/
 @media (max-width: 500px) {
-  .cv-layout {
+  #cv-layout {
     display: flex;
     flex-direction: column; /* Mobile : tout s'empile */
   }
 }
+/****************/
 
 
-
-
-/*.grid_cross {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
-  /*text-align: center;
-  padding: 10px 0;
-}
-.grid_cross div:nth-child(1)::after {
-    content: "";
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 4%;
-    background: linear-gradient(90deg, transparent, black));
-}*/
-
+/************ Carré des compétences ***********/
 .grid_cross {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
   width: 100%;
 }
-
 .grid_cross div{
   padding: 3px;
   display: flex;
@@ -536,11 +415,8 @@ p {
   font-size: 0.6rem;
   position: relative;/* Important pour positionner les traits */
 }
-
 /* --- DESSIN DES TRAITS --- */
-
 /* 1. Trait VERTICAL (Entre colonne 1 et 2) */
-
 /* Case Haut-Gauche : Trait vertical côté droit (du transparent vers le gris) */
 .grid_cross div:nth-child(1)::after {
   content: "";
@@ -549,7 +425,6 @@ p {
   width: 1px;
   background: linear-gradient(to bottom, transparent, var(--bg));
 }
-
 /* Case Bas-Gauche : Trait vertical côté droit (du gris vers le transparent) */
 .grid_cross div:nth-child(3)::after {
   content: "";
@@ -558,10 +433,7 @@ p {
   width: 1px;
   background: linear-gradient(to bottom, var(--bg), transparent);
 }
-
-
 /* 2. Trait HORIZONTAL (Entre ligne 1 et 2) */
-
 /* Case Haut-Gauche : Trait bas (du transparent vers le gris) */
 .grid_cross div:nth-child(1)::before {
   content: "";
@@ -570,7 +442,6 @@ p {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--bg));
 }
-
 /* Case Haut-Droite : Trait bas (du gris vers le transparent) */
 .grid_cross div:nth-child(2)::before {
   content: "";
@@ -579,8 +450,10 @@ p {
   height: 1px;
   background: linear-gradient(to right, var(--bg), transparent);
 }
+/**************/
 
 
+/************** Liste des compétences *************/
 .liste_competences {
   display: flex;
   flex-direction: column;
@@ -613,35 +486,23 @@ p {
 .list_card_competences div {
   background-color: var(--bg-light);
   width: fit-content;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 4px;
   box-shadow: var(--shadow-xs);
   margin: 2px;
   border: solid 2px var(--bg);
   font-size: 0.6rem;
 }
-
-.pill {
-  background-color: var(--bg);
-  border-radius: 15px;
-  padding: 5px 10px 5px 10px;
-}
+/*************/
 
 
-
-
-
-
-
-/* Timeline */
-/* Conteneur principal de la timeline */
+/******************* Timeline *********************/
 .timeline {
   position: relative;
   padding-left: 30px; /* Espace pour la ligne à gauche */
   font-family: sans-serif;
   max-width: 500px;
 }
-
 /* La ligne verticale dégradée */
 .timeline::before {
   content: "";
@@ -652,17 +513,13 @@ p {
   width: 2px;
   background: linear-gradient(to bottom, var(--bg), var(--bg));
 }
-
 .timeline .experience:last-child {
   margin-bottom: 0px;
 }
-
-/* Bloc d'expérience individuelle */
 .experience {
   position: relative;
   margin-bottom: 20px;
 }
-
 /* Le point sur la timeline */
 .dot {
   position: absolute;
@@ -676,8 +533,6 @@ p {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1;
 }
-
-/* Typographie et petits éléments */
 .timeline_header { 
   display: flex; 
   justify-content: space-between; 
@@ -686,13 +541,6 @@ p {
 }
 .timeline_header > * {
   margin-bottom: 6px;
-}
-.badge { 
-  background: #dbeafe; 
-  color: #1d4ed8; 
-  font-size: 10px; 
-  padding: 2px 8px; 
-  border-radius: 99px; 
 }
 .company { 
   font-size: 12px; 
@@ -715,11 +563,12 @@ p {
   text-align: center;
   padding-top: 2px;
 }
+/****************/
 
 
 
 
-/******* BULLE *********/
+/********************* BULLE ********************/
 /* Le conteneur qui se déplace */
 .widget-container {
   position: fixed;
@@ -732,14 +581,11 @@ p {
   flex-direction: column;
   align-items: center;
 }
-
 /* Classe ajoutée via JS pour animer le magnétisme */
 .widget-container.snapping {
   transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
               top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-/* La Bulle */
 .bubble {
   width: 60px;
   height: 60px;
@@ -755,25 +601,21 @@ p {
   user-select: none;
   transition: transform 0.2s, background 0.3s;
 }
-
 .bubble:active {
   cursor: grabbing;
   transform: scale(0.95);
 }
-
 /* Changement d'icône quand ouvert */
 .widget-container.open .bubble {
   background: light-dark(hsl(var(--h), var(--s), 60%),hsl(var(--h), var(--s), 40%));
   transform: rotate(90deg);
 }
-
-/* Le Menu */
 .menu-options {
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
   background: white;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   width: 160px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.15);
   overflow: hidden;
@@ -787,26 +629,22 @@ p {
   position: absolute;
   top: 70px; /* Juste en dessous de la bulle */
 }
-
 /* État ouvert du menu */
 .widget-container.open .menu-options {
   opacity: 1;
   transform: scale(1) translateY(0);
   pointer-events: all;
 }
-
-/* Éléments du menu */
 .menu-options li {
   padding: 12px 20px;
   cursor: pointer;
   border-bottom: 1px solid #eee;
   transition: background 0.2s;
 }
-
 .menu-options li:hover {
   background: #f7f7f7;
 }
-
 .menu-options li:last-child {
   border-bottom: none;
 }
+/****************/
