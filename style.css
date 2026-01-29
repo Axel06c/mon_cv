@@ -6,7 +6,11 @@
   --h: 190; /*0 - 360*/
   --s: 35%; /*0% - 100%*/
 
-
+  /*--police: 'Montserrat', sans-serif;
+  --police-title: 'Montserrat', sans-serif;*/
+  --police-title: "Poppins", sans-serif;
+  --police: "Lato", sans-serif;
+  
   color-scheme: light dark; /* light: mode clair, dark: mode sombre */
   --bg-dark: light-dark(hsl(var(--h), var(--s), 85%),hsl(var(--h), var(--s), 0%));
   --text: light-dark(hsl(var(--h), var(--s), 5%), hsl(var(--h), var(--s), 95%));
@@ -22,14 +26,13 @@
   --border-radius: 10px;
   --border-radius-high: 21px;
 
-  --shadow-xs: 0px 0px 5px light-dark(hsla(0, 0%, 0%, 0.07), 
-  hsla(0, 0%, 100%, 1));
-  --shadow-xl: -4px 8px 12px -2px light-dark(rgba(0, 0, 0, 0.25), 
-  rgba(255, 255, 255, 0.15));
-  --shadow: -1px 2px 4px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
-  hsla(0, 0%, 100%, 0.07));
-  --shadow-bottom: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
-  hsla(0, 0%, 100%, 0.07)), 0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 100%, 0.15))
+  --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
+    /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
+  --shadow-m: inset 0 1px 2px #ffffff50, /* top highlight */ 0 2px 4px #00000030,
+    /* dark shadow */ 0 4px 8px #00000015; /* soft shadow */
+  --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015;
+  --shadow-unset: 0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9), -0.2rem -0.2rem 0.4rem #fff;
 }
 /****************/
 
@@ -78,9 +81,9 @@
 /****************** BASE *********************/
 * {
   font-weight: 200;
+  font-family: var(--police);
 }
 body {
-  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 18px;
   background-color: hsl(var(--h), var(--s), 50%);
@@ -97,11 +100,13 @@ h1 {
 /* Entre 1.5rem (mobile) et 2.5rem (desktop) */
   font-size: x-large;
   font-weight: 600;
+  font-family: var(--police-title);
   margin: 0;
 }
 h2 {
-  font-size: clamp(1.1rem, 3vw, 1.2rem);
+  font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: 300;
+  font-family: var(--police-title);
   margin: 0;
 }
 h3 { 
@@ -128,10 +133,8 @@ li::before {
   color: #60a5fa; 
 }
 p {
-  font-size: smaller;
   margin: 4px;
   font-size: 0.7rem;
-  /*margin: 9px 9px 9px 73px;*/
   text-align: justify;
 }
 /**************/
@@ -154,7 +157,7 @@ p {
   justify-content: center;
   align-items: center;
   
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-m);
 }
 .calendrier {
   margin-left: 5px;
@@ -262,8 +265,7 @@ p {
   margin-top: 7px;
   margin-bottom: 7px;
   border-radius: var(--border-radius);
-  border: var(--border-card);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-l);
 }
 .card:hover {
   background: var(--gradient-hover);
@@ -281,6 +283,7 @@ p {
 .card.card_topleft_corner_rounded > div:first-child > div {
   font-weight: 400;
   font-size: 0.95em;
+  font-family: var(--police-title);
 }
 /**************/
 
@@ -288,11 +291,11 @@ p {
 /************ Expériences professionelles **********/
 .card_timeline {
   background: var(--gradient);
-  padding: 4px;
+  padding: 6px;
   margin-top: 7px;
   margin-bottom: 7px;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-s);
   display: flex;
 }
 .timeline_card_main_content {
@@ -306,10 +309,10 @@ p {
   background: var(--gradient);
   margin-top: 10px;
   margin-bottom: 10px;
-  border: solid 3px hsl(var(--h) var(--s) 71%);
-  box-shadow: var(--shadow);
+  /*border: solid 3px hsl(var(--h) var(--s) 71%);*/
+  box-shadow: var(--shadow-m);
   border-radius: var(--border-radius-high);
-  padding: 8px;
+  padding: 12px;
 }
 .card_projets_header {
   display: flex;
@@ -468,7 +471,7 @@ p {
   margin-top: 6px;
 }
 .shadow_all_childs div {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-m);
 }
 .bloc_et_gradient div:nth-child(1) {
   white-space: nowrap;
@@ -482,15 +485,17 @@ p {
 .list_card_competences {
   display: flex;
   flex-wrap:wrap;
+  padding-top: 4px;
 }
 .list_card_competences div {
   background-color: var(--bg-light);
   width: fit-content;
   border-radius: var(--border-radius);
-  padding: 4px;
-  box-shadow: var(--shadow-xs);
+  padding: 6px;
+  box-shadow: var(--shadow-l);
   margin: 2px;
-  border: solid 2px var(--bg);
+  /*border: solid 2px var(--bg);*/
+  box-shadow: inset -8px -8px 8px 0 rgba(255, 255, 255, 0.7), inset 8px 8px 8px 0 rgba(174, 174, 192, 0.2);
   font-size: 0.6rem;
 }
 /*************/
@@ -501,7 +506,7 @@ p {
   position: relative;
   padding-left: 30px; /* Espace pour la ligne à gauche */
   font-family: sans-serif;
-  max-width: 500px;
+  margin: 9px 6px 0px 11px;
 }
 /* La ligne verticale dégradée */
 .timeline::before {
@@ -518,7 +523,7 @@ p {
 }
 .experience {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 /* Le point sur la timeline */
 .dot {
@@ -549,6 +554,9 @@ p {
   align-items: flex-end;
   justify-content: flex-end;
   margin-left: auto;
+}
+.company * {
+  font-family: var(--police-title);
 }
 .timeline_location_icon {
   margin: 0px 4px 0px 4px;
