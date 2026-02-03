@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
         <div id="cv-container" class="page bg-dark">
             <div id="header">
                 <div style="display: flex;">
-                    <div style="    height: clamp(55px, 8vw, 70px);
+                    <div style="    height: clamp(55px, 8vw, 67px);
                         width: auto;">
                         <img src="images/Axel.jpg" style="height: 258%;
                             width: auto; 
@@ -28,176 +29,391 @@
                     justify-content: center;
                     align-items: flex-start;
                     margin: 10px;">
-                        <div style="white-space: nowrap;    font-size: x-large;
-                        white-space: nowrap;
-                        font-weight: 400;">Axel Corneille</div>
-                        <div style="white-space: nowrap;font-weight: 100;">Ingénieur/développeur full-stack</div>
+                        <h1 style="white-space: nowrap;">Axel Corneille</h1>
+                        <h2 style="white-space: nowrap;">Ingénieur/développeur full-stack</h2>
                     </div>
                 </div>
                 
-                <div id="information_list" style="margin-left: auto;">
+                <div id="information_list">
                     <div>
-                        <img src="images/envelope.svg" style="
-                        height: auto;
-                        width: auto; 
-                        filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
-                        hsla(0, 0%, 100%, 0.15)))"> 
+                        <img src="images/envelope.svg" class="svg"> 
                         axel.corneille@gmail.com
                     </div>
                     <div>
-                    <img src="images/telephone.svg" style="
-                    height: auto;
-                    width: auto; 
-                    filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
-                    hsla(0, 0%, 100%, 0.15)))"> 
+                    <img src="images/telephone.svg" class="svg"> 
                     06 69 35 13 26</div>
                     <div>
-                    <img src="images/geo-alt.svg" style="
-                    height: auto;
-                    width: auto; 
-                    filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
-                    hsla(0, 0%, 100%, 0.15)))"> 
+                    <img src="images/geo-alt.svg" class="svg"> 
                     Nice</div>
                     <div>
-                    <img src="images/linkedin.svg" style="
-                    height: auto;
-                    width: auto; 
-                    filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
-                    hsla(0, 0%, 100%, 0.15)))"> 
+                    <img src="images/linkedin.svg" class="svg"> 
                     @axel.corneille</div>
                 </div>
             </div>
 
-            <div class="cv-layout">
-                <aside class="sidebar stack">
-                    <div id="spacer"></div>
-                    <div class="bg card">
-                        Profil
+            <div id="cv-layout">
+                <aside class="sidebar">
+                    <div id="spacer" style="display: flex; flex-direction: row-reverse;">
+                        <img src="images/qr-code.svg" style="height: inherit;max-width: 46px; display: none;">
+                    </div>
+                    <div class="bg card card_topleft_corner_rounded">
+                        <div class="title_with_icon">
+                            <div class="svg_container_round">
+                                <img src="images/person.svg" class="svg">
+                            </div>
+                            <div>Profil</div>
+                        </div>
+                        <div class="grid_cross">
+                            <div>Volontaire</div>
+                            <div>Sérieux</div>
+                            <div>Sociable</div>
+                            <div>Travail d’équipe</div>
+                        </div>
+                    </div>
+                    <div class="bg card card_topleft_corner_rounded">
+                        <div class="title_with_icon">
+                            <div class="svg_container_round">
+                                <img src="images/bar-chart-line.svg" class="svg">
+                            </div>
+                            <div>Compétences</div>
+                        </div>
+                        <div class="liste_competences" style="font-size: small;">
+                            <div>
+                                <div class="bloc_et_gradient espace_competences">
+                                    <div>Backend</div>
+                                    <div></div>
+                                </div>
+                                <div class="list_card_competences">
+                                    <div class="pill_competence">PHP (Symfony)</div>
+                                    <div class="pill_competence">Python</div>
+                                    <div class="pill_competence">Java</div>
+                                    <div class="pill_competence">Windev</div>
+                                    <div class="pill_competence">C++</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bloc_et_gradient espace_competences">
+                                    <div>Frontend</div>
+                                    <div></div>
+                                </div>
+                                <div class="list_card_competences">
+                                    <div class="pill_competence">JavaScript</div>
+                                    <div class="pill_competence">HTML5/CSS3 (Twig)</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bloc_et_gradient espace_competences">
+                                    <div>DevOps & Outils</div>
+                                    <div></div>
+                                </div>
+                                <div class="list_card_competences">
+                                    <div class="pill_competence">Docker</div>
+                                    <div class="pill_competence">Git (GitKraken)</div>
+                                    <div class="pill_competence">JetBrains</div>
+                                    <div class="pill_competence">CI/CD</div>
+                                    <div class="pill_competence">Cron</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bloc_et_gradient espace_competences">
+                                    <div>Gestion/Agilité</div>
+                                    <div></div>
+                                </div>
+                                <div class="list_card_competences">
+                                    <div class="pill_competence">Jira</div>
+                                    <div class="pill_competence">Knowledge Management</div>
+                                    <div class="pill_competence">Méthodes Agiles</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bloc_et_gradient espace_competences">
+                                    <div>Soft Skills</div>
+                                    <div></div>
+                                </div>
+                                <div class="list_card_competences">
+                                    <div class="pill_competence">Force de proposition</div>
+                                    <div class="pill_competence">Vulgarisation technique</div>
+                                    <div class="pill_competence">Autonomie</div>
+                                    <div class="pill_competence">Knowledge management</div>
+                                    <div class="pill_competence">Gestion des priorités</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg card card_topleft_corner_rounded">
+                        <div class="title_with_icon">
+                            <div class="svg_container_round">
+                                <img src="images/heart.svg" class="svg">
+                            </div>
+                            <div>Centres d'intérets</div>
+                        </div>
+                        
+                        <div class="grid_cross">
+                            <div>Nouvelles technologies</div>
+                            <div>Escalade</div>
+                            <div>Programmation</div>
+                            <div>Randonnée</div>
+                        </div>
+                    </div>
+                    <div class="bg card card_topleft_corner_rounded">
+                        <div class="title_with_icon">
+                            <div class="svg_container_round">
+                                <img src="images/translate.svg" class="svg">
+                            </div>
+                            <div>Anglais</div>
+                        </div>
                         <ul>
-                            <li>Volontaire</li>
-                            <li>Sérieux</li>
-                            <li>Sociable</li>
-                            <li>Travail d’équipe</li>
+                            <li>Toeic Niveau B2</li>
+                            <li>Travail en contexte international possible</li>
                         </ul>
                     </div>
-                    <div class="bg card">
-                        CENTRES D’INTERETS
-                        <ul>    
-                            <li>Nouvelles technologies</li>
-                            <li>Escalade</li>
-                            <li>Programmation</li>
-                            <li>Randonnée</li>
-                        </ul>
-                    </div>
-                    <div class="bg card">
-                        COMPETENCES
-                        <div style="font-size: small;">
-                            Backend
-                                PHP (Symfony), Python, Java, Windev, C++
-
-                            Frontend
-                                JavaScript, HTML5/CSS3 (Twig)
-
-                            DevOps & Outils
-                                Docker, Git (GitKraken), JetBrains,  CI/CD, Cron, Logigramme (Framework propriétaire)
-
-                            Gestion/Agilité
-                                Jira/Confluence (Suite Atlassian), Knowledge Management, Méthodes Agiles
-
-                            Soft Skills
-                                Force de proposition, vulgarisation technique, autonomie, Conduite du changement, Organisation, Knowledge management, Gestion des priorités
-
-                            Anglais
-                                Niveau B2, travail en contexte international possible
+                    
+                    <div class="bg card card_topleft_corner_rounded">
+                        <div class="title_with_icon">
+                            <div class="svg_container_round">
+                                <img src="images/plus.svg" class="svg" style="width: 22px;">
+                            </div>
+                            <div>Voir plus</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-around;">
+                            <img src="images/qr-code.svg" style="width: 48px;">
+                            <img src="images/qr-code-linkedin.svg" style="width: 48px;">
                         </div>
                     </div>
                 </aside>
             
                 <main class="main-content stack">
-                    <div class="bg card">
-                        A propos
-                        <div>Ingénieur Développeur Full-Stack diplômé de Polytech, fort de 2 ans d’expérience (alternance & CDI). Spécialisé dans la résolution de problématiques complexes (legacy, refactoring) et le pilotage de projets agiles. Passionné par L’UI/UX et l'optimisation des processus d'équipe.</div>
+                    <div class="bg card card_topleft_corner_rounded no-margin-top">
+                        <div class="bloc_et_gradient shadow_all_childs">
+                            <div class="pill_title">À propos</div>
+                            <div style="margin-left: 0px;"></div>
+                        </div>
+                        <p style="margin: 8px 17px 4px 17px;">
+                            Ingénieur Développeur Full-Stack diplômé de Polytech, fort de 2 ans d’expérience (alternance & CDI). 
+                            Je suis passionné par l'impact utilisateur (UI/UX), l'efficacité opérationnelle et l'automatisation. 
+                            Au-delà du code, j'aime structurer la connaissance (Knowledge Management) et fluidifier les processus agiles.
+                        </p>
                     </div>
-                    <div class="bg card">
-                        EXPERIENCES PROFESSIONNELLES
-                        <div>
-                            Ingénieur/Développeur Full-Stack (CDI) - Depuis Avril. 2025
-                            BNC SA, Nice
-                                Maintien en condition opérationnelle (MCO) d'un système critique.
-                                Modernisation des outils de Knowledge Management.
+                    <div class="bg card card_topleft_corner_rounded">
+                        <div class="bloc_et_gradient shadow_all_childs">
+                            <div class="pill_title">Expériences professionelles</div>
+                            <div style="margin-left: 0px;"></div>
+                        </div>
+                        <div class="timeline">
+                            
+                            <div class="experience">
+                                <div class="dot"></div>
+                                <div class="card_timeline">
+                                    <div>
+                                        <img src="images/suitcase-lg.svg" class="svg suitcase">
+                                    </div>
+                                    <div class="timeline_card_main_content">
+                                        <div class="timeline_header">
+                                            <h3>Ingénieur/Développeur Full-Stack (CDI)</h3>
+                                            <div class="company">
+                                                <img src="images/buildings.svg" class="svg timeline_location_icon">
+                                                <div>BNC SA</div> 
+                                                &nbsp;
+                                                <img src="images/geo-alt.svg" class="svg timeline_location_icon">
+                                                <div>Nice</div>
+                                            </div>
+                                        </div>
+                                        <div class="date">
+                                            <img src="images/calendar4-week.svg" class="svg calendrier">
+                                            <div>Avril. 2025 - Présent</div>
+                                        </div>
+                                        <ul>
+                                            <li>Maintien en condition opérationnelle (MCO) d'un système critique.</li>
+                                            <li>Modernisation des outils de Knowledge Management.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="experience">
+                                <div class="dot"></div>
+                                <div class="card_timeline">
+                                    <div>
+                                        <img src="images/suitcase-lg.svg" class="svg suitcase">
+                                    </div>
+                                    <div class="timeline_card_main_content">
+                                        <div class="timeline_header">
+                                            <h3>Développeur Full-Stack (alternance + CDD)</h3>
+                                            <div class="company">
+                                                <img src="images/buildings.svg" class="svg timeline_location_icon">
+                                                <div>Akkodis, pour EDF</div> 
+                                                &nbsp;
+                                                <img src="images/geo-alt.svg" class="svg timeline_location_icon">
+                                                <div>Tours</div>
+                                            </div>
+                                        </div>
+                                        <div class="date">
+                                            <img src="images/calendar4-week.svg" class="svg calendrier"> 
+                                            <div>Sept. 2023 - Oct. 2024</div>
+                                        </div>
+                                        <ul>
+                                            <li>Conception d'un portail paramétrable et refonte des méthodes de travail.</li>          
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
-                            Développeur Full-Stack (alternance + CDD) - Sept. 2023 à Oct. 2024
-                            Akkodis Tours, pour EDF
-                                Conception d'un portail paramétrable et refonte des méthodes de travail.
-
-                            Développeur Full-Stack (CDD) - Juin 2022 à Janvier 2023
-                            Atline Service, Sophia Antipolis
-                                Développement d'un logiciel de gestion d'appels d'offres en Windev.
+                            <div class="experience">
+                                <div class="dot"></div>
+                                <div class="card_timeline">
+                                    <div>
+                                        <img src="images/suitcase-lg.svg" class="svg suitcase">
+                                    </div>
+                                    <div class="timeline_card_main_content">
+                                        <div class="timeline_header">
+                                            <h3>Développeur Full-Stack (CDD)</h3>
+                                            <div class="company">
+                                                <img src="images/buildings.svg" class="svg timeline_location_icon">
+                                                <div>Atline Service</div> 
+                                                &nbsp;
+                                                <img src="images/geo-alt.svg" class="svg timeline_location_icon">
+                                                <div>Sophia Antipolis</div>
+                                            </div>
+                                        </div>
+                                        <div class="date">
+                                            <img src="images/calendar4-week.svg" class="svg calendrier">
+                                            <div>Juin 2022 - Janvier 2023</div>
+                                        </div>
+                                        <ul>
+                                            <li>Développement d'un logiciel de gestion d'appels d'offres en Windev.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg card">
-                        PROJETS
-                        <div>
-                            Maintenance et Refactoring d’un système critique (Legacy) (BNC SA)
-                                Gestion et stabilisation d'une architecture monolithique complexe à forte dette technique.
-                                Rétro-ingénierie et analyse d’un modèle de données volumineux (+300 tables SQL).
-                                Pilotage du Maintien en Condition Opérationnelle (MCO) et mise en œuvre d'un refactoring progressif pour améliorer la maintenabilité.
-                                Expertise métier : Analyse approfondie des flux fonctionnels pour garantir la continuité de service sur un système de production.
-
-                            Développement d'un portail Web modulaire et paramétrable (Akkodis, pour EDF)
-                                Conception UI/UX intégrale centrée sur l'utilisateur et respectant les normes d'accessibilité (spécificités EDF).
-                                Ingénierie des besoins : Rédaction du cahier des charges technique et fonctionnel en collaboration directe avec les clients.
-                                Gestion de projet (Lead Technique) : Découpage des lots de travaux, planification des sprints et distribution des tâches aux collaborateurs.
-                                Architecture : Mise en place d’un système hautement configurable pour répondre à une grande diversité de cas d'usage.
-
-                            Optimisation des processus et de la méthodologie de gestion de projet (Akkodis)
-                                Audit et analyse critique de la méthodologie existante pour identifier les goulots d'étranglement.
-                                Conception et déploiement d’un nouveau workflow de production validé par les parties prenantes.
-                                Transformation digitale interne : Développement d'une interface de ticketing propriétaire facilitant la communication temps réel entre les clients et l'équipe technique.
-
-                            Système Embarqué de Captation Gestuelle (Projet scolaire)
-                                Traitement de données provenant de capteurs inertiels via Arduino (C++)
-                                Développement d'une application de synthèse sonore sous Android Studio (Java).
-                                Mise en œuvre d'algorithmes d'analyse de mouvements pour la génération audio en temps réel.
+                    <div class="bg card card_topleft_corner_rounded">
+                        <div class="bloc_et_gradient shadow_all_childs">
+                            <div class="pill_title">Projets</div>
+                            <div style="margin-left: 0px;"></div>
+                        </div>
+                        <div style="margin: 11px 8px 4px 8px">
+                            <div class="card_projets">
+                                <div class="card_projets_header">
+                                    <div class="projet_title">
+                                        Maintenance et Refactoring d’un système critique (Legacy)
+                                    </div>
+                                    <div class="projet_date">
+                                        BNC&nbsp;SA&nbsp;·&nbsp;2025
+                                    </div>
+                                </div>
+                                <div class="projet_description">
+                                    Gestion et stabilisation d'une architecture monolithique complexe à forte dette technique.
+                                    Rétro-ingénierie et analyse d’un modèle de données volumineux (+300 tables SQL).
+                                    MCO et refactoring progressif pour améliorer la maintenabilité.
+                                    Assimilation des enjeux métiers complexes pour assurer la maintenance du logiciel sans interruption de service.                                
+                                </div>
+                                <div class="projet_points_cles">
+                                    <div class="pill">Retro-ingénierie</div>
+                                    <div class="pill">SQL</div>
+                                    <div class="pill">MCO</div>
+                                    <div class="pill">Compréhension métier</div>
+                                    <div class="pill">Système Critique</div>
+                                </div>
+                            </div>
+                            <div class="card_projets">
+                                <div class="card_projets_header">
+                                    <div class="projet_title">
+                                        Développement d'un portail Web modulaire
+                                    </div>
+                                    <div class="projet_date">
+                                        Akkodis,&nbsp;pour&nbsp;EDF&nbsp;·&nbsp;2024
+                                    </div>
+                                </div>
+                                <div class="projet_description">
+                                    Conception UI/UX intégrale centrée sur l'utilisateur et respectant les normes d'accessibilité (spécificités EDF).
+                                    Rédaction du cahier des charges technique et fonctionnel en collaboration directe avec les clients.
+                                    Découpage des lots de travaux, planification des sprints et distribution des tâches aux collaborateurs.
+                                    Mise en place d’un système hautement configurable pour répondre à une grande diversité de cas d'usage.
+                                </div>
+                                
+                                <div class="projet_points_cles">
+                                    <div class="pill">Pilotage</div>
+                                    <div class="pill">Lead technique</div>
+                                    <div class="pill">UI/UX</div>
+                                    <div class="pill">Accessibilité</div>
+                                    <div class="pill">Symfony</div>
+                                </div>
+                            </div>
+                            <div class="card_projets">
+                                <div class="card_projets_header">
+                                    <div class="projet_title">
+                                        Optimisation des processus et gestion de projet
+                                    </div>
+                                    <div class="projet_date">
+                                        Akkodis&nbsp;·&nbsp;2024
+                                    </div>
+                                </div>
+                                <div class="projet_description">
+                                    Audit et analyse critique de la méthodologie existante pour identifier les goulots d'étranglement.
+                                    Conception et déploiement d’un nouveau workflow de production validé par les parties prenantes.
+                                    Développement d'une interface de ticketing propriétaire facilitant la communication entre les clients et l'équipe technique.
+                                </div>
+                                
+                                <div class="projet_points_cles">
+                                    <div class="pill">Gestion de projet</div>
+                                    <div class="pill">Scrum/Agile</div>
+                                    <div class="pill">Lean Management</div>
+                                    <div class="pill">Système de ticketing / ITSM</div>
+                                </div>
+                            </div>
+                            <div class="card_projets">
+                                <div class="card_projets_header">
+                                    <div class="projet_title">
+                                        Système Embarqué de Captation Gestuelle
+                                    </div>
+                                    <div class="projet_date">
+                                        Projet&nbsp;scolaire&nbsp;·&nbsp;2020
+                                    </div>
+                                </div>
+                                <div class="projet_description">
+                                    Traitement de données provenant de capteurs inertiels via Arduino (C++)
+                                    Application de synthèse sonore sous Android Studio (Java).
+                                    Algorithmes d'analyse de mouvements pour la génération audio en temps réel.
+                                </div>
+                                <div class="projet_points_cles">
+                                    <div class="pill">Systèmes Embarqués</div>
+                                    <div class="pill">Android</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </main>
             </div>
             <div id="footer">
-                <div></div>
-                <div style="font-style: italic;
-                font-weight: 100;
-                font-size: small;">Références sur demande</div>
+                <div>Préavis de 2 mois</div>
+                <div>Références sur demande</div>
+                <div>Permis B & véhiculé</div>
             </div>
 
-            <!--<div class="bg card" style="margin: 5px;width: fit-content;">
-                <p class="text-muted">Mon CV ....</p>
-                <div class="bg-light" style="width: auto;box-shadow: var(--shadow);">
-                    <p class="text">Mon CV</p>
-                </div>
-            </div>-->
-
-
-            <button id="theme-toggle-btn" class="theme-toggle-btn no-print" title="Basculer entre mode clair et sombre">
+            <button style="display: none;" id="theme-toggle-btn" class="theme-toggle-btn no-print" title="Basculer entre mode clair et sombre">
                 <span id="theme-icon">🌙</span>
             </button>
-    <!-- Bouton d'impression fixe -->
-    <button id="download-pdf-btn" class="download-btn no-print" title="Imprimer le CV">
-        🖨️ Imprimer
-    </button>
 
-    <!-- Sliders HSL en bas à gauche -->
-    <div class="hsl-controls no-print">
-        <div class="slider-group">
-            <label for="h-slider">H (Teinte)</label>
-            <input type="range" id="h-slider" min="0" max="360" value="190" class="slider">
-            <span class="slider-value" id="h-value">190</span>
+    <div id="floating-widget" class="widget-container no-print">
+        
+        <div class="bubble">
+            <span class="icon">☰</span>
         </div>
-        <div class="slider-group">
-            <label for="s-slider">S (Saturation)</label>
-            <input type="range" id="s-slider" min="0" max="100" value="35" class="slider">
-            <span class="slider-value" id="s-value">35%</span>
-        </div>
+
+        <ul class="menu-options">
+            <li id="download-pdf-btn" style="cursor:pointer;">🖨️ Imprimer</li>
+
+            <li>
+                <label for="h-slider">Teinte</label>
+                <input type="range" id="h-slider" min="0" max="360" value="190" class="slider">
+            </li>
+            <li>
+                <label for="s-slider">Saturation</label>
+                <input type="range" id="s-slider" min="0" max="100" value="35" class="slider">
+            </li>
+        </ul>
+
     </div>
 
     <script src="script.js"></script>

@@ -1,3 +1,4 @@
+/***************** Constantes CSS ******************/
 :root {
   --p-width: 21cm;
   --p-height: 29.7cm;
@@ -5,61 +6,46 @@
   --h: 190; /*0 - 360*/
   --s: 35%; /*0% - 100%*/
 
-
+  --police-title: "Poppins", sans-serif;
+  --police: "Lato", sans-serif;
+  
   color-scheme: light dark; /* light: mode clair, dark: mode sombre */
-  --bg-dark: light-dark(hsl(var(--h), var(--s), 90%),hsl(var(--h), var(--s), 0%));
+  --bg-dark: light-dark(hsl(var(--h), var(--s), 85%),hsl(var(--h), var(--s), 0%));
   --text: light-dark(hsl(var(--h), var(--s), 5%), hsl(var(--h), var(--s), 95%));
-  --bg: light-dark(hsl(var(--h), var(--s), 95%), hsl(var(--h), var(--s), 13%));
-  --text-muted: light-dark(hsl(var(--h), var(--s), 30%), hsl(var(--h), var(--s), 70%));
+  --bg: light-dark(hsl(var(--h), var(--s), 93%), hsl(var(--h), var(--s), 13%));
   --bg-light: light-dark(hsl(var(--h), var(--s), 100%), hsl(var(--h), var(--s), 20%));
 
   --border: light-dark(hsl(var(--h), var(--s), 70%), hsl(var(--h), var(--s), 30%));
-  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
-  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --gradient: linear-gradient(135deg, var(--bg-dark), var(--bg));
+  --gradient-hover: linear-gradient(0deg, var(--bg-dark), var(--bg));
+  --gradient-lighter: linear-gradient(135deg, var(--bg), var(--bg-light));
   --highlight: light-dark(hsl(var(--h), var(--s), 100%), hsl(var(--h), var(--s), 60%));
-  --border-card: solid 1px var(--bg);
+  --border-card: solid 2px var(--bg);
 
-  --shadow: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
-  hsla(0, 0%, 100%, 0.07)), 0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 100%, 0.15));
-  --shadow-bottom: 0px 2px 2px light-dark(hsla(0, 0%, 0%, 0.07), 
-  hsla(0, 0%, 100%, 0.07)), 0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 100%, 0.15))
-}
+  --border-radius: 10px;
+  --border-radius-high: 21px;
 
-/* Forcer le mode via une classe ou un attribut */
-.dark-theme {
-  color-scheme: dark;
+  --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
+    /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
+  --shadow-m: inset 0 1px 2px #ffffff50, /* top highlight */ 0 2px 4px #00000030,
+    /* dark shadow */ 0 4px 8px #00000015; /* soft shadow */
+  --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015;
+  --shadow-unset: 0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9), -0.2rem -0.2rem 0.4rem #fff;
+  --shadow-inset: inset -8px -8px 8px 0 rgba(255, 255, 255, 0.7), inset 8px 8px 8px 0 rgba(174, 174, 192, 0.2);
 }
+/****************/
 
-.light-theme {
-  color-scheme: light;
-}
-
-.bg-light {
-  background-color: var(--bg-light);
-}
-.bg-dark {
-  background-color: var(--bg-dark);
-}
-.bg {
-  background-color: var(--bg);
-}
-.text-muted {
-  color: var(--text-muted);
-}
-.text {
-  color: var(--text);
-}
-/* Suppression des marges de page pour l'impression */
+/**************** FORMAT D'IMPRESSION *****************/
 @page {
   margin: 0 !important;
   padding: 0 !important;
   size: A4;
 }
-
 /* Styles pour l'impression avec @media print natif */
 @media print {
   @page {
-    margin: 0mm; /* Ou une petite marge de sécurité : 5mm */
+    margin: 5mm; /* Ou une petite marge de sécurité : 5mm */
     size: A4;
   }
 
@@ -78,92 +64,135 @@
   html, body {
     margin: 0 !important;
     padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  body{
-    /*zoom: 80%;*/
+    width: var(--p-width) !important;
+    height: var(--p-height) !important;
   }
   
   /* Style du conteneur CV pour l'impression */
   #cv-container {
     width: 100% !important; 
-        height: 100% !important;
-        max-width: 100% !important;
-        min-height: 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    page-break-inside: avoid;
-    /* On s'assure que la couleur de fond actuelle est bien appliquée */
+    height: 100% !important;
     background-color: var(--bg-dark) !important;
-        
-    /* Double sécurité pour Chrome */
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
   }
 
-  
+  #spacer {
+    height: 92px;
+  }
+
 }
+/*****************/
 
-
-
+/****************** BASE *********************/
+* {
+  font-weight: 300;
+  font-family: var(--police);
+}
 body {
-    font-family: 'Montserrat', sans-serif;
-    /*font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    line-height: 1.6;*/
-    margin: 0;
-    padding: 18px;
-    background-color: hsl(var(--h), var(--s), 50%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1 {
-  /* Entre 1.5rem (mobile) et 2.5rem (desktop) */
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-}
-
-p, li {
-  /* Entre 0.9rem et 1.1rem */
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
-
-/* Le conteneur A4 */
-#cv-container {
-/* clamp(MIN, VALEUR IDÉALE, MAX) */
-  /* Min: 100% (mobile), Idéal: 90vw, Max: 21cm (A4) */
-  width: clamp(320px, 95vw, 21cm);
-  
-  /* Pour la hauteur, on veut garder le ratio A4 le plus possible */
-  /* Mais sur mobile, on laisse le contenu définir la hauteur */
-  min-height: clamp(500px, 141.4vw, 29.7cm);
-  display: flex;
-  flex-direction: column;
-  
   margin: 0;
-  padding: 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.cv-layout {
-  flex: 1;
-}
-
-#footer {
-  padding: 4px;
-  background-color: var(--bg);
+  padding: 18px;
+  background-color: hsl(var(--h), var(--s), 50%);
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  
+  justify-content: center;
+  align-items: flex-start; 
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+h1 {
+/* Entre 1.5rem (mobile) et 2.5rem (desktop) */
+  font-size: x-large;
+  font-weight: 600;
+  font-family: var(--police-title);
+  margin: 0;
+}
+h2 {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 300;
+  font-family: var(--police-title);
+  margin: 0;
+}
+h3 { 
+  margin: 0; 
+  font-size: 14px; 
+  font-weight: 500;
+}
+ul { 
+  margin: 5px 0 0 10px; 
+  padding-left: 12px; 
+  border-left: 2px solid var(--bg); 
+  list-style: none; 
+}
+li { 
+  font-size: 0.7em; 
+  color: #4b5563; 
+  margin-bottom: 4px; 
+  position: relative; 
+}
+li::before { 
+  /*content: "•";*/ 
+  position: absolute; 
+  left: -10px; 
+  color: #60a5fa; 
+}
+p {
+  margin: 4px;
+  font-size: 0.7rem;
+  text-align: justify;
+}
+/**************/
+
+
+/************* GESTION DES IMAGES ***************/
+.svg {
+  height: auto;
+  width: auto; 
+  filter: drop-shadow(0px 4px 4px light-dark(hsla(0, 0%, 0%, 0.15), 
+  hsla(0, 0%, 100%, 0.15)))
+}
+.svg_container_round {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  background-color: var(--bg); 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  box-shadow: var(--shadow-m);
+}
+.calendrier {
+  margin-left: 5px;
+  margin-right: 8px;
+  width: 1.1em;
+}
+.suitcase {
+  margin: 0px 5px 0px 4px;
+}
+/*********/
+
+
+/************ Paramètres globaux ***************/
+.bg-light {
+  background-color: var(--bg-light);
+}
+.bg-dark {
+  background-color: var(--bg-dark);
+}
+.bg {
+  background-color: var(--bg);
+}
+.pill_title {
+  background-color: var(--bg);
+  border-radius: var(--border-radius-high);
+  padding: 5px 10px 5px 10px;
+}
+/************/
+
+
+/*********** Affichage global ***********/
 #header {
   display: flex;
   flex-wrap: wrap;
@@ -172,162 +201,186 @@ p, li {
   box-shadow: var(--shadow-bottom);
   height: fit-content;
   padding: 10px;
+  background-color:linear-gradient(135deg, var(--bg-dark), var(--bg));
 }
+/* Conteneur A4 */
+#cv-container {
+  /* clamp(MIN, VALEUR IDÉALE, MAX) */
+  /* Min: 320px, Idéal: 95vw, Max: 21cm (A4) */
+  width: clamp(389px, 95vw, var(--p-width));
+  
+  /* Pour la hauteur, on veut garder le ratio A4 le plus possible */
+  /* Mais sur mobile, on laisse le contenu définir la hauteur */
+  height: clamp(500px, 141.4vw, var(--p-height));
+  display: flex;
+  flex-direction: column;
+  
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+#cv-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr; 
+  align-items: start;
+  padding: 8px 10px 0px 10px;
+  gap: 0 1rem;
+  flex: 1;
+  background-color: var(--bg-light);
+}
+#footer {
+  padding: 4px 10px 4px 10px;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer > div {
+  font-style: italic;
+  font-size: small;
+}
+
+.pill {
+  background-color: var(--bg-light);
+  width: fit-content;
+  border-radius: var(--border-radius);
+  padding: 5px 6px 5px 6px;
+  box-shadow: var(--shadow-l);
+  margin: 2px;
+  /*border: solid 2px var(--bg);*/
+  box-shadow: var(--shadow-s);
+  font-size: 0.6rem;
+}
+
+.pill_competence {
+  background-color: var(--bg);
+  width: fit-content;
+  border-radius: var(--border-radius);
+  padding: 6px;
+  box-shadow: var(--shadow-l);
+  margin: 2px;
+  /*border: solid 2px var(--bg);*/
+  box-shadow: var(--shadow-s);
+  font-size: 0.6rem;
+}
+.no-margin-top {
+  margin-top: 0 !important;
+}
+/*******************/
+
+
+/********* Liste des informations perso ***********/
 #information_list{
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
 }
 #information_list > div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 #information_list > div > img:first-child {
   margin-right: 4px;
 }
 #information_list * {
-  font-weight: 100;
   font-size: clamp(0.7rem, 2vw, 0.9rem);
 }
+/*********************/
 
 
+/************* Cartes globales ***********/
 .card {
   background: var(--gradient);
   padding: 4px;
-  border-radius: 6px;
-  border: var(--border-card);
-  border-top: var(--highlight);
-  box-shadow: var(--shadow);
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-l);
 }
 .card:hover {
   background: var(--gradient-hover);
 }
-
-
-
-
-
-
-
-/* Bouton toggle theme fixé en haut à gauche */
-.theme-toggle-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  background: var(--bg-light);
-  color: var(--text);
-  border: 2px solid var(--text-muted);
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
+.card_topleft_corner_rounded {
+  border-radius: var(--border-radius-high) var(--border-radius) var(--border-radius) var(--border-radius);
+}
+.title_with_icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
+  gap: 4px;
+  margin-bottom: 5px;
 }
-
-.theme-toggle-btn:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  border-color: var(--text);
+/* Pour le titre des cartes */
+.card.card_topleft_corner_rounded > div:first-child > div {
+  font-weight: 400;
+  font-size: 0.95em;
+  font-family: var(--police-title);
 }
+/**************/
 
-.theme-toggle-btn:active {
-  transform: scale(0.95) rotate(0deg);
-}
 
-.theme-toggle-btn #theme-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle-btn:hover #theme-icon {
-  transform: scale(1.2);
-}
-
-/* Animation de rotation pour le soleil */
-.theme-toggle-btn #theme-icon.sun {
-  animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Bouton de téléchargement PDF fixe */
-.download-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.download-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
-}
-
-.download-btn:active {
-  transform: translateY(0);
-}
-
-/* Contrôles HSL en bas à gauche */
-.hsl-controls {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: var(--bg-light);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  border: 2px solid var(--text-muted);
-  min-width: 200px;
-}
-
-.slider-group {
+/************ Expériences professionelles **********/
+.card_timeline {
+  background: var(--gradient-lighter) ;
+  padding: 6px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-s);
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
 }
-
-.slider-group:last-child {
-  margin-bottom: 0;
+.timeline_card_main_content {
+  flex-grow: 1;
 }
+/**************/
 
-.slider-group label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 4px;
+
+/*************** Projets *************/
+.card_projets {
+  background: var(--gradient-lighter);
+  margin-top: 8px;
+  margin-bottom: 8px;
+  /*border: solid 3px hsl(var(--h) var(--s) 71%);*/
+  box-shadow: var(--shadow-m);
+  border-radius: var(--border-radius-high);
+  padding: 12px 12px 5px 12px;
 }
+.card_projets_header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.projet_title {
+  font-weight: 500;
+  font-size: small;
+  text-align: left;
+  align-self: center;
+  margin-right: 8px;
+}
+.projet_date {
+  background-color: var(--bg-dark);
+  padding: 3px 8px 3px 8px;
+  border-radius: var(--border-radius-high);
+  font-size: 0.7em;
+  margin: -1px -2px 0px 0px;
+}
+.projet_description {
+   font-size: 0.7em;
+   margin-top: 4px;
+   text-align: justify;
+}
+.projet_points_cles {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+/********************/
 
+
+/*************** Slider ****************/
 .slider {
   width: 100%;
   height: 6px;
@@ -336,82 +389,298 @@ p, li {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  cursor: pointer;
+  margin-top: 7px;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--text);
-  cursor: pointer;
-  border: 2px solid var(--bg-light);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: var(--bg-dark);
+  cursor: grab;
+  border: none;
+  box-shadow: var(--shadow-s);
   transition: all 0.2s ease;
 }
-
 .slider::-webkit-slider-thumb:hover {
   transform: scale(1.2);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
-
 .slider::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--text);
-  cursor: pointer;
-  border: 2px solid var(--bg-light);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: var(--bg-dark);
+  cursor: grab;
+  border: none;
+  box-shadow: var(var(--shadow-s));
   transition: all 0.2s ease;
 }
-
 .slider::-moz-range-thumb:hover {
   transform: scale(1.2);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
-
-.slider-value {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-align: right;
-  margin-top: 4px;
-}
+/*******************/
 
 
-
-
-
-/* --- 1. Logique d'espacement vertical (space-y-4 en Tailwind) --- */
-.stack {
+/**************** Gestion de la grid principale ************/
+.sidebar {
   display: flex;
   flex-direction: column;
-  /*gap: 1rem; /* Environ 16px (gap-4) */
 }
+/*****************/
 
-/* --- 2. Mise en page globale --- */
-.cv-layout {
-  display: grid;
-      /* Equivalent de grid-cols-3 : 1 part à gauche, 2 parts à droite */
-      grid-template-columns: 1fr 3fr; 
-      align-items: start; /* Empêche d'étirer les colonnes inutilement */
-  padding: 10px;
-  
-}
 
-/* --- 3. Version Desktop (min-width: 768px ou plus) --- */
+/***************** Version Mobile *****************/
 @media (max-width: 500px) {
-  .cv-layout {
+  #cv-layout {
     display: flex;
-  flex-direction: column; /* Mobile : tout s'empile */
-  gap: 1.25rem; /* gap-5 (20px) */
-      }
-  
-  /* Pas besoin de définir col-span ici car :
-     - .sidebar prendra naturellement la 1ère colonne (1fr)
-     - .main-content prendra la 2ème colonne (2fr)
-  */
+    flex-direction: column; /* Mobile : tout s'empile */
+  }
 }
+/****************/
+
+
+/************ Carré des compétences ***********/
+.grid_cross {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+  width: 100%;
+}
+.grid_cross div{
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.65rem;
+  position: relative;/* Important pour positionner les traits */
+}
+/* --- DESSIN DES TRAITS --- */
+/* 1. Trait VERTICAL (Entre colonne 1 et 2) */
+/* Case Haut-Gauche : Trait vertical côté droit (du transparent vers le gris) */
+.grid_cross div:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+}
+/* Case Bas-Gauche : Trait vertical côté droit (du gris vers le transparent) */
+.grid_cross div:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+}
+/* 2. Trait HORIZONTAL (Entre ligne 1 et 2) */
+/* Case Haut-Gauche : Trait bas (du transparent vers le gris) */
+.grid_cross div:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--bg));
+}
+/* Case Haut-Droite : Trait bas (du gris vers le transparent) */
+.grid_cross div:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+/**************/
+
+
+/************** Liste des compétences *************/
+.liste_competences {
+  display: flex;
+  flex-direction: column;
+}
+.bloc_et_gradient {
+  display: flex;
+  align-items: center;
+}
+.espace_competences {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 6px;
+}
+.shadow_all_childs div {
+  box-shadow: var(--shadow-m);
+}
+.bloc_et_gradient div:nth-child(1) {
+  white-space: nowrap;
+}
+.bloc_et_gradient div:nth-child(2) {
+  background: linear-gradient(to right, var(--bg), transparent);
+  height: 1px;
+  width: 100%;
+  margin-left: 4px;
+}
+.list_card_competences {
+  display: flex;
+  flex-wrap:wrap;
+  padding-top: 4px;
+}
+/*************/
+
+
+/******************* Timeline *********************/
+.timeline {
+  position: relative;
+  padding-left: 30px; /* Espace pour la ligne à gauche */
+  font-family: sans-serif;
+  margin: 9px 6px 0px 11px;
+}
+/* La ligne verticale dégradée */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 5px;
+  bottom: 5px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--bg), var(--bg));
+}
+.timeline .experience:last-child {
+  margin-bottom: 0px;
+}
+.experience {
+  position: relative;
+  margin-bottom: 7px;
+}
+/* Le point sur la timeline */
+.dot {
+  position: absolute;
+  left: -29px; /* Aligne le point sur la ligne ::before */
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--bg);
+  border-radius: 50%;
+  box-shadow: var(--shadow-s);
+  z-index: 1;
+}
+.timeline_header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.timeline_header > * {
+  margin-bottom: 6px;
+}
+.company { 
+  font-size: 12px; 
+  color: #4b5563;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+.company * {
+  font-family: var(--police-title);
+}
+.timeline_location_icon {
+  margin: 0px 4px 0px 4px;
+}
+.date { 
+  font-size: 11px; 
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+}
+.date > div:last-child {
+  text-align: center;
+  padding-top: 2px;
+  font-weight: 500;
+}
+/****************/
+
+
+
+
+/********************* BULLE ********************/
+/* Le conteneur qui se déplace */
+.widget-container {
+  position: fixed;
+  /* Position initiale */
+  top: 20px;
+  left: 20px; 
+  z-index: 1000;
+  touch-action: none; /* Important pour le drag sur mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Classe ajoutée via JS pour animer le magnétisme */
+.widget-container.snapping {
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.bubble {
+  width: 60px;
+  height: 60px;
+  background: hsl(var(--h), var(--s), 50%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s, background 0.3s;
+}
+.bubble:active {
+  cursor: grabbing;
+  transform: scale(0.95);
+}
+/* Changement d'icône quand ouvert */
+.widget-container.open .bubble {
+  background: light-dark(hsl(var(--h), var(--s), 60%),hsl(var(--h), var(--s), 40%));
+  transform: rotate(90deg);
+}
+.menu-options {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  background: white;
+  border-radius: var(--border-radius);
+  width: 160px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  
+  /* Animation d'ouverture */
+  opacity: 0;
+  transform: scale(0.8) translateY(-20px);
+  transform-origin: top center;
+  pointer-events: none; /* Non cliquable quand fermé */
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 70px; /* Juste en dessous de la bulle */
+}
+/* État ouvert du menu */
+.widget-container.open .menu-options {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: all;
+}
+.menu-options li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+  margin: 0;
+}
+.menu-options li:hover {
+  background: #f7f7f7;
+}
+.menu-options li:last-child {
+  border-bottom: none;
+}
+/****************/
