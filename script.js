@@ -4,7 +4,7 @@ const ua = navigator.userAgent.toLowerCase();
 // Appliquer le thème blanc par défaut
 html.style.setProperty('color-scheme', 'light');
 // Ajouter l'événement impression au bouton d'impression
-document.getElementById('download-pdf-btn').addEventListener('click', () => {
+document.getElementById('print-btn').addEventListener('click', () => {
   window.print();
 });
 
@@ -42,7 +42,7 @@ else updateS(sSlider.value);
 //////////// Ajustement du spacer (pour laisser de la place sous la photo) ////////////
 function adjustSpacerHeight(valueFlat = -1) {
   const spacer = document.getElementById('spacer');
-  const axelImage = document.querySelector('img[src="images/Axel.jpg"]');
+  const axelImage = document.getElementById('image_perso');
   
   if (!spacer || !axelImage) return;
   
@@ -69,11 +69,11 @@ function adjustSpacerHeight(valueFlat = -1) {
 window.addEventListener('beforeprint', () => {
   console.log("Préparation de l'impression...");
   if (ua.indexOf('firefox') > -1) {
-      adjustSpacerHeight(54); 
-  } else if (ua.indexOf('chrome') > -1) {    
-    adjustSpacerHeight(74); 
-  } else if (ua.indexOf('safari') > -1) {
       adjustSpacerHeight(60); 
+  } else if (ua.indexOf('chrome') > -1) {    
+    adjustSpacerHeight(80); 
+  } else if (ua.indexOf('safari') > -1) {
+      adjustSpacerHeight(84); 
   }
 });
 // Optionnel : Recalculer après (si l'impression modifie l'affichage écran)

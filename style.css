@@ -108,7 +108,7 @@ h1 {
   margin: 0;
 }
 h2 {
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: clamp(1rem, 1rem, 1.2rem);
   font-weight: 300;
   font-family: var(--police-title);
   margin: 0;
@@ -287,7 +287,7 @@ p {
   margin-right: 4px;
 }
 #information_list * {
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  font-size: clamp(0.7rem, 0.7rem, 0.9rem);
 }
 /*********************/
 
